@@ -36,7 +36,6 @@ O front-end é composto pelo site institucional, uma tela de login e cadastro, e
 Para dúvidas ou sugestões, entre em contato pelo e-mail: [intellisense-sptech@outlook.com].
 
 ## Integrantes:
-Integrantes
 - Caio Viveiros: https://github.com/CaioViveiros
 - Giovanna Gomes: https://github.com/giovannagomeslm
 - Jhenifer Lorrane: https://github.com/jheniferlorrane
