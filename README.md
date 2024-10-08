@@ -33,7 +33,7 @@ O front-end é composto pelo site institucional, uma tela de login e cadastro, e
 - Abra o arquivo **index.html** em seu navegador para visualizar a página inicial.
 
 ## Contato
-Para dúvidas ou sugestões, entre em contato pelo e-mail: [intellisense-sptech@outlook.com].
+Para dúvidas ou sugestões, entre em contato pelo e-mail: intellisense-sptech@outlook.com.
 
 ## Integrantes:
 - Caio Viveiros: https://github.com/CaioViveiros
