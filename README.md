@@ -50,7 +50,7 @@ Para dúvidas ou sugestões, entre em contato pelo e-mail: [intellisense-sptech@
 │   ├── 📁 assets           # Imagens, ícones, etc.
 │   ├── 📁 css              # Arquivos de estilos CSS
 │   ├── 📁 js               # Scripts JavaScript
-│   ├── 📁 views            # Páginas HTML do site
+│   ├── 📁 views            # Páginas HTML do site e dashboard
 │   └── index.html          # Página inicial
 ├── 📁 src                  # Arquivos do servidor e backend
 │   ├── 📁 controllers      # Lógica de controle
