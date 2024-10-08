@@ -37,12 +37,12 @@ Para dúvidas ou sugestões, entre em contato pelo e-mail: [intellisense-sptech@
 
 ## Integrantes:
 Integrantes
-Caio Viveiros: https://github.com/CaioViveiros
-Giovanna Gomes: https://github.com/giovannagomeslm
-Jhenifer Lorrane: https://github.com/jheniferlorrane
-João Paulo Mazzetto: https://github.com/jp-mazzetto
-Lucas Ronald: https://github.com/Lucas-Ronald
-Samuel Batista: https://github.com/Lzsaam
+- Caio Viveiros: https://github.com/CaioViveiros
+- Giovanna Gomes: https://github.com/giovannagomeslm
+- Jhenifer Lorrane: https://github.com/jheniferlorrane
+- João Paulo Mazzetto: https://github.com/jp-mazzetto
+- Lucas Ronald: https://github.com/Lucas-Ronald
+- Samuel Batista: https://github.com/Lzsaam
 
 ## Estrutura do Repositório
 ```bash
