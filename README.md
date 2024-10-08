@@ -15,7 +15,7 @@ O front-end é composto pelo site institucional, uma tela de login e cadastro, e
 - **CSS**: Estilização do layout, garantindo um design responsivo e atraente.
 - **JavaScript**: Interatividade e funcionalidades dinâmicas, como a validação de formulários e interação com a dashboard.
 - **Node.js**: Utilizado para gerenciamento de dependências e configuração do ambiente de desenvolvimento.
-- 
+  
 ## Como Executar o Projeto
 1. **Clone o repositório**:
    ```bash
