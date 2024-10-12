@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #223C62;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 260px;
+    padding: 0 16px;
+    background: #FFFFFF;
+    backdrop-filter: blur(30px);
+    transition: width 0.4s;
+    box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.1); /* Sombra para destacar a sidebar */
+}
+
+.sidebar header {
+    display: flex;
+    justify-content: center;
+    height: 72px;
+    padding-top: 10px;
+}
+
+.sidebar header img {
+    height: 60px;
+    width: 65px;
+}
+
+.sidebar input {
+    scale: 0;
+    position: absolute;
+}
+
+.sidebar input#mapas:checked + label + .sub-menu,
+.sidebar input#forum:checked + label + .sub-menu,
+.sidebar input#perfil:checked + label + .sub-menu {
+    color: #FFF;
+}
+
+.sidebar input#mapas:checked + label + .sub-menu {
+    height: 150px;
+}
+
+.sidebar input#forum:checked + label + .sub-menu {
+    height: 100px;
+}
+
+.sidebar input#perfil:checked + label + .sub-menu {
+    height: 100px;
+}
+
+.sidebar :is(button, label) {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 16px;
+    color: #223C62;
+    background: #FFF;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar input:checked + label {
+    background: #223C62;
+    color: #FFF;
+}
+
+.sidebar label i {
+    transition: 0.3s;
+}
+
+.sidebar input:checked + label > i:nth-child(3) {
+    transform: rotate(-180deg);
+}
+
+.sidebar input:not(:checked) + label:hover,
+.sidebar button:hover {
+    background: #223C62;
+    color: #FFF;
+}
+
+.sidebar ul {
+    display: grid;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sub-menu {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    transition: 0.5s;
+}
+
+.sub-menu ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+}
+
+.sub-menu button {
+    padding-left: 52px;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sub-menu button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #223C62;
+}
+
+.sidebar i {
+    font-size: 20px;
+    width: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 280px; 
+    gap: 20px;
+    padding: 20px;
+    width: calc(100% - 280px);
+}
+
+.relatos  {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 78%;
+    height: 650px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avaliacoes {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 48%;
+    height: 650px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #3d4b5d;
+}
+
+.relatos .relato-card  {
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+.avaliacoes .avaliacao-card {
+    /* border: 2px solid #e0e0e0; */
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #223C62;
+}
+
+.relatos .relato-header p .avaliacoes .avaliacao-header p {
+    margin-bottom: 10px;
+    color: #50597b;
+}
+
+.avaliacoes .avaliacao-header p {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.relatos .relato-text p .avaliacoes .avaliacao-text p {
+    color: #3d4b5d;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.avaliacoes .avaliacao-text p {
+    color: white;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+
+.relatos .enviar-btn {
+    display: block;
+    width: 160px;
+    margin-left: 75%;
+    background-color: #223C62;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.avaliacoes .enviar-btn {
+    display: block;
+    width: 160px;
+    margin-left: 58%;
+    background-color: #223C62;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.enviar-btn:hover {
+    background-color: white;
+    color: #223C62;
+    border: 2px solid #223C62; 
+}
+
+
+
+.avaliacoes {
+    margin: 20px;
+}
+
+.avaliacao-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative; 
+}
+
+.avaliacao-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating {
+    position: relative; 
+}
+
+.rating:not(:checked) > input {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    appearance: none;
+}
+
+.rating:not(:checked) > label {
+    cursor: pointer;
+    font-size: 30px;
+    color: #666;
+}
+
+.rating:not(:checked) > label:before {
+    content: '★';
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #e58e09;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: #ff9e0b;
+}
+
+.rating > input:checked ~ label {
+    color: #ffa723;
+}
+
