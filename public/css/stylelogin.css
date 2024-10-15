@@ -1,5 +1,5 @@
-body{
-    background-image: url(../assets/background-login.png);
+body {
+    background-color: #223C62;
     position: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -7,7 +7,8 @@ body{
     font-family: "Tomorrow";
 
 }
-.corpo{
+
+.corpo {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -15,26 +16,44 @@ body{
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    
-    
+
+
 }
-.corpo-login{
-    background-color: var(--input-opacidade);
-    width: 37vw;
-    height: 100vh;
-    border-right: 2.5px solid #575757;
-    border-left: 2.5px solid #575757;
+
+.corpo-login {
+    background-color: #FFFFFF;
+    width: 50vw;
+    height: 75vh;
+    border-radius: 10px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
-.titulo{
-    color: white;
+.corpo-titulo{
+    display: flex;
+    flex-direction: row;
+   margin-bottom: 5vh;
+   margin-top: 5vh;
+    align-items: center;
+   width: 100%;
+   height: 10vh;
+}
+.botao-voltar{
     font-size: 50px;
-    margin-bottom: 10vh;
+    margin-left: 3vw;
+    color: #00265f;   
+    text-decoration: none;
 }
-.corpo-inputs{
-    color: white;
+
+.titulo img {
+    width: 15vw;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+    margin-left: 14vw;
+}
+
+.corpo-inputs {
+    color: black;
     display: flex;
     flex-direction: column;
     font-size: 20px;
@@ -48,65 +67,76 @@ body{
     outline: none;
 }
 
-.email{
+.email {
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid white;
+    border: 1px solid #C1BDBD;
     padding: 10px;
-    width: 70%;
-    height: 5vh;
-    color: white;
-    margin-bottom: 10vh;
+    width: 90%;
+    height: 7vh;
+    color: black;
+    margin-bottom: 4vh;
     font-size: 20px;
-}
-.senha{
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid white;
-    padding: 10px;
-    width: 70%;
-    height: 5vh;
-    color: white;
-    font-size: 20px;
-    margin-bottom: 13vh;
+    border-radius: 10px;
 }
 
-.titulo-input{
-    margin-right: 60%;
+.senha {
+    background-color: transparent;
+    border: none;
+    border: 1px solid #C1BDBD;
+    padding: 10px;
+    width: 90%;
+    height: 7vh;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 7vh;
 }
-.botao-entrar{
-    background-color: var(--input-opacidade);
-    width: 50%;
+
+.titulo-input {
+    color: #223C62;
+    margin-right: 81%;
+    margin-bottom: 10px;
+}
+
+.botao-entrar {
+    background-color: #044194;
+    width: 90%;
     height: 12vh;
-    border: 2.5px solid #575757;
     border-radius: 15px;
-    font-size: 30px;
+    border: none;
+    font-size: 35px;
     color: white;
     font-family: "Tomorrow";
-    margin-bottom: 10vh;
-    transition: 0.7s;
+    margin-bottom: 2.5vh;
+
 }
-.botao-entrar:hover{
-    background-color: #7c7c7c;
+
+.botao-entrar:hover {
+    background-color: #114aa0;
     cursor: pointer;
 }
-.span-cadastrar{
-    color: #6b6b6b;
+
+.span-cadastrar {
+    color: #223C62;
     font-size: 15px;
 }
 
-.span-cadastrar a{
+.span-cadastrar a {
     text-decoration: none;
 }
 
-.link-cadastrar{
+.link-cadastrar {
     margin-left: 5px;
-    color: white;
+    color: #223C62;
     font-size: 15px;
+    font-weight: 500;
 }
-
+.link-cadastrar:hover{
+    text-decoration: underline;
+}
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -114,7 +144,7 @@ body{
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.4);
     color: #FFFBFB;
 }
 
