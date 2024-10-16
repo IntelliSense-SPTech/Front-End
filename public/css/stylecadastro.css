@@ -147,7 +147,8 @@ body {
     font-size: 15px;
     font-weight: 500;
 }
-.link-cadastrar:hover{
+
+.link-cadastrar:hover {
     text-decoration: underline;
 }
 

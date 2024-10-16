@@ -17,9 +17,10 @@
 
         <div class="corpo-login">
             <div class="corpo-titulo">
-                <div class="botao-voltar"><a href="login.html"><</a></div>
+                <div class="botao-voltar"><a href="login.html"><</a>
+                </div>
                 <div class="titulo"><img src="..\assets\2.png"></div>
-                 </div>  
+            </div>
 
             <div class="corpo-inputs">
                 <span class="titulo-input">Nome</span>
@@ -31,9 +32,9 @@
                 <span class="titulo-input">Senha</span>
                 <input type="password" class="senha" id="input_senha">
 
-            
 
-                
+
+
                 <button class="botao-cadastrar" onclick="validarInputs()">Cadastrar</button>
 
                 <span class="span-cadastrar">Já possui uma conta?<a href="login.html"
@@ -58,7 +59,7 @@
             document.getElementById("modal").style.display = "none";
         }
 
-        
+
         function verificaEmail() {
             const emailInformado = document.getElementById("input_email").value;
             const modal = document.getElementById("modal");
@@ -77,7 +78,7 @@
             }
         }
 
-      
+
         function validarSenha() {
             const senha = document.getElementById("input_senha").value;
 
@@ -96,7 +97,7 @@
             }
         }
 
-        
+
         function validarInputs() {
             const senha = document.getElementById("input_senha").value;
             const confirmacao = document.getElementById("input_confirmacao").value;
@@ -105,12 +106,12 @@
                 return;
             }
 
-       
+
             if (!validarSenha()) {
                 return;
             }
 
-         
+
             if (senha !== confirmacao) {
                 const mensagemModal = document.getElementById("modal-message");
                 mensagemModal.textContent = "As senhas não coincidem.";
@@ -118,7 +119,7 @@
                 return;
             }
 
-          
+
             alert("Cadastro realizado com sucesso!");
         }
     </script>
