@@ -1,5 +1,5 @@
 body {
-    background-image: url(../assets/background-login.png);
+    background-color: #223C62;
     position: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,25 +20,43 @@ body {
 
 }
 
-.corpo-login {
-    background-color: var(--input-opacidade);
-    width: 37vw;
-    height: 100vh;
-    border-right: 2.5px solid #575757;
-    border-left: 2.5px solid #575757;
+.corpo-titulo {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
 }
 
-.titulo {
-    color: white;
-    font-size: 45px;
-    margin-bottom: 7vh;
+.botao-voltar {
+    font-size: 50px;
+    margin-left: 3vw;
+    color: #00265f;
+    text-decoration: none;
+}
+
+
+.corpo-login {
+    background-color: #FFFFFF;
+    width: 50vw;
+    height: 90vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo img {
+    width: 15vw;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+    margin-left: 14vw;
 }
 
 .corpo-inputs {
-    color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     font-size: 20px;
@@ -48,87 +66,93 @@ body {
     align-items: center;
 }
 
-.corpo-inputs input:focus {
-    outline: none;
-}
+
 
 .nome {
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid white;
+    border: 1px solid #C1BDBD;
     padding: 10px;
-    width: 70%;
-    height: 5vh;
-    color: white;
-    margin-bottom: 5vh;
+    width: 90%;
+    height: 7vh;
+    color: black;
     font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 4vh;
 }
 
 .email {
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid white;
+    border: 1px solid #C1BDBD;
     padding: 10px;
-    width: 70%;
-    height: 5vh;
-    color: white;
-    margin-bottom: 5vh;
+    width: 90%;
+    height: 7vh;
+    color: black;
+    margin-bottom: 4vh;
     font-size: 20px;
+    border-radius: 10px;
 }
 
 .senha {
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid white;
+    border: 1px solid #C1BDBD;
     padding: 10px;
-    width: 70%;
-    height: 5vh;
-    color: white;
+    width: 90%;
+    height: 7vh;
+    color: black;
     font-size: 20px;
-    margin-bottom: 5vh;
+    border-radius: 10px;
+    margin-bottom: 7vh;
 }
 
 .titulo-input {
-    margin-right: 20%;
+    margin-right: 37%;
     display: flex;
     width: 50%;
+    margin-bottom: 1vh;
 }
 
 .botao-cadastrar {
-    background-color: var(--input-opacidade);
-    width: 50%;
+    background-color: #044194;
+    width: 90%;
     height: 12vh;
-    border: 2px solid #575757;
     border-radius: 15px;
-    font-size: 25px;
+    border: none;
+    font-size: 35px;
     color: white;
     font-family: "Tomorrow";
-    margin-bottom: 5vh;
-    transition: 0.7s;
+    margin-bottom: 2.5vh;
 }
 
 .botao-cadastrar:hover {
-    background-color: #7c7c7c;
+    background-color: #114aa0;
     cursor: pointer;
 }
 
 .span-cadastrar {
-    color: #6b6b6b;
+    color: #223C62;
     font-size: 15px;
 }
 
-.span-cadastrar a{
+.span-cadastrar a {
     text-decoration: none;
 }
 
+
 .link-cadastrar {
     margin-left: 5px;
-    color: white;
+    color: #223C62;
     font-size: 15px;
+    font-weight: 500;
+}
+.link-cadastrar:hover{
+    text-decoration: underline;
 }
 
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -136,7 +160,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.4);
     color: #FFFBFB;
 }
 
