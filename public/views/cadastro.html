@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/stylecadastro.css">
+    <link rel="stylesheet" href="../css/a.css">
+    <link rel="icon" href="../assets/5.png">
     <script src="../js/cadastro.js"></script>
     <script src="../js/links.js"></script>
-    <title>Login</title>
+    <title>Cadastro</title>
 </head>
 
 <body>
     <div class="corpo">
 
         <div class="corpo-login">
-            <div class="titulo"><span>Cadastro</span></div>
+            <div class="corpo-titulo">
+                <div class="botao-voltar"><a href="login.html"><</a></div>
+                <div class="titulo"><img src="..\assets\2.png"></div>
+                 </div>  
 
             <div class="corpo-inputs">
                 <span class="titulo-input">Nome</span>
@@ -27,8 +31,7 @@
                 <span class="titulo-input">Senha</span>
                 <input type="password" class="senha" id="input_senha">
 
-                <span class="titulo-input">Confirme sua senha</span>
-                <input type="password" class="senha" id="input_confirmacao">
+            
 
                 
                 <button class="botao-cadastrar" onclick="validarInputs()">Cadastrar</button>

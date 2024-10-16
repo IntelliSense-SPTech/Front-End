@@ -1,0 +1,188 @@
+body {
+    background-color: #223C62;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    font-family: "Tomorrow";
+
+}
+
+.corpo {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+
+}
+
+.corpo-titulo {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+}
+
+.botao-voltar {
+    font-size: 50px;
+    margin-left: 3vw;
+    color: #00265f;
+    text-decoration: none;
+}
+
+
+.corpo-login {
+    background-color: #FFFFFF;
+    width: 50vw;
+    height: 90vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo img {
+    width: 15vw;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+    margin-left: 14vw;
+}
+
+.corpo-inputs {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.nome {
+    background-color: transparent;
+    border: none;
+    border: 1px solid #C1BDBD;
+    padding: 10px;
+    width: 90%;
+    height: 7vh;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 4vh;
+}
+
+.email {
+    background-color: transparent;
+    border: none;
+    border: 1px solid #C1BDBD;
+    padding: 10px;
+    width: 90%;
+    height: 7vh;
+    color: black;
+    margin-bottom: 4vh;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.senha {
+    background-color: transparent;
+    border: none;
+    border: 1px solid #C1BDBD;
+    padding: 10px;
+    width: 90%;
+    height: 7vh;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 7vh;
+}
+
+.titulo-input {
+    margin-right: 37%;
+    display: flex;
+    width: 50%;
+    margin-bottom: 1vh;
+}
+
+.botao-cadastrar {
+    background-color: #044194;
+    width: 90%;
+    height: 12vh;
+    border-radius: 15px;
+    border: none;
+    font-size: 35px;
+    color: white;
+    font-family: "Tomorrow";
+    margin-bottom: 2.5vh;
+}
+
+.botao-cadastrar:hover {
+    background-color: #114aa0;
+    cursor: pointer;
+}
+
+.span-cadastrar {
+    color: #223C62;
+    font-size: 15px;
+}
+
+.span-cadastrar a {
+    text-decoration: none;
+}
+
+
+.link-cadastrar {
+    margin-left: 5px;
+    color: #223C62;
+    font-size: 15px;
+    font-weight: 500;
+}
+.link-cadastrar:hover{
+    text-decoration: underline;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #FFFBFB;
+}
+
+.modal-content {
+    background-color: #041834;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #044194;
+    width: 80%;
+    max-width: 300px;
+}
+
+.close {
+    color: #FFFBFB;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
