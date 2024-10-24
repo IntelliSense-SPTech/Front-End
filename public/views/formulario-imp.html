@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/formulario.css">
+    <link rel="icon" href="../assets/5.png">
+    <title>Formulário de implementação</title>
+</head>
+
+<body>
+    <div class="corpo">
+
+        <div class="corpo-login">
+            <div class="corpo-titulo">
+                <div class="botao-voltar"><a href="..\index.html"><</a>
+                </div>
+                <div class="titulo"><img src="..\assets\2.png"></div>
+            </div>
+
+            <div class="corpo-inputs">
+                <span class="titulo-input">Nome Completo</span>
+                <input type="text" class="nome" id="input_nome" required>
+
+                
+                <span class="titulo-input">Telefone</span>
+                <input type="tel" class="telefone" id="input_tel" required>
+
+                <span class="titulo-input">Email</span>
+                <input type="email" class="email" id="input_email" required>
+
+                <span class="titulo-input">Senha</span>
+                <input type="password" class="senha" id="input_senha" required>
+
+                <span class="titulo-input">CIM (Carteira de identidade Militar)</span>
+                <input type="text" class="CIM" id="input_CIM" required>
+
+                <span class="titulo-input">CPF</span>
+                <input type="text" class="CPF" id="input_CPF" maxlength="11" minlength="11" required>
+
+
+                <span class="span-cadastrar">Esses dados serão submetidos a um processo de validação, e entraremos em contato por e-mail assim que a análise for concluída.
+                <button class="botao-cadastrar" onclick="enviarDados()">Enviar os dados</button>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    
+</body>
+
+</html>
