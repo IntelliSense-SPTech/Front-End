@@ -62,6 +62,10 @@ body::-webkit-scrollbar-thumb {
     border-radius: 30px;
 }
 
+.mobile-nav{
+    display: none;
+}
+
 #home {
     background: var(--gradiente1);
     height: 95vh;
@@ -624,7 +628,7 @@ footer p {
 
     .ferramentas {
         display: flex;
-        padding: 25px;
+        padding: 25px ;
         gap: 30px;
     }
 
@@ -682,15 +686,112 @@ footer p {
 
     header {
         padding: 50px 30px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
 
     header img.logo1 {
-        width: 40%;
+        width: 35%;
     }
 
-    header nav {
+    .menu-desktop-tablet{
         display: none;
     }
+
+    .mobile-nav {
+        display: block;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .blurred-background {
+        filter: brightness(40%); 
+        transition: filter 0.5s ease, opacity 0.5s ease;
+        opacity: 1;
+    }
+
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        height: 40vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-radius: 0 12px 12px 0; 
+        padding: 20px;
+        width: 170px;
+        z-index: 1;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        opacity: 0;
+        transform: translateX(-100%); 
+        align-items: center;
+    }
+    
+    .open {
+        display: block;
+        opacity: 1;
+        transform: translateX(0); 
+    }
+
+    .mobile-menu-icon{
+        z-index: 2;
+    }
+    
+    .mobile-menu-icon button {
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        border-radius: 2px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .mobile-menu .nav-item {
+        margin: 15px 0 0;
+        padding-left: 18px;
+        text-align: left;
+    }
+    
+    .mobile-menu .nav-item a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+    
+    .mobile-menu .nav-item a:hover {
+        color: #007bff;
+    }
+    
+    .login-button {
+        padding: 15px;
+        text-align: left;
+    }
+    
+    .login-button a {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #007bff;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+    }
+    
+    .login-button a:hover {
+        background-color: #0056b3;
+    }
+    
 
     .titulos {
         font-size: 25px;
@@ -698,7 +799,12 @@ footer p {
 
     #home {
         height: 60vh;
+        display: flex;
+        justify-content: center;
+    }
 
+    .btn-home {
+        font-size: 15px;
     }
 
     .img_home {

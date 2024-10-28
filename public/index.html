@@ -4,7 +4,7 @@
 <head>
     <title>IntelliSense</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" localEscuro="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/5.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styleindex.css">
@@ -14,7 +14,7 @@
 <body>
     <header>
         <img class="logo1" src="assets/logo.png" alt="Logo" id="logo">
-        <nav>
+        <nav class="menu-desktop-tablet">
             <div class="menus" id="menu">
                 <a href="#home">Home</a>
                 <a href="#servicos">Serviços</a>
@@ -23,6 +23,24 @@
             </div>
             <a class="btn_login" href="views/login.html">Login</a>
         </nav>
+
+        <div class="mobile-nav">
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="assets/menu.svg" alt=""></button>
+            </div>
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item" onclick="removeEscuro()"><a href="#home">Home</a></li>
+                    <li class="nav-item" onclick="removeEscuro()"><a href="#servicos">Serviços</a></li>
+                    <li class="nav-item" onclick="removeEscuro()"><a href="#sobre">Sobre</a></li>
+                    <li class="nav-item" onclick="removeEscuro()"><a href="#contato">Contato</a></li>
+                </ul>
+
+                <div class="login-button">
+                    <a class="btn_login" href="views/login.html">Login</a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -37,7 +55,8 @@
                         </h3>
                     </div>
                     <div class="frase_home">
-                        <span>Analise de dados com tecnologia de IA</span><button class="btn" onclick="ia()">Saiba mais
+                        <span>Analise de dados com tecnologia de IA</span><button class="btn btn-home"
+                            onclick="ia()">Saiba mais
                             <img src="assets/icon-seta.png"></button><br>
                     </div>
                 </div>
@@ -94,7 +113,8 @@
             </div>
         </div>
         <div id="inteligenciaArtificial">
-            <p class="titulos titulo_inteligencia">Inteligência Artificial <img src="assets/icon_seta_baixo.png" class="setaBaixo"></p>
+            <p class="titulos titulo_inteligencia">Inteligência Artificial <img src="assets/icon_seta_baixo.png"
+                    class="setaBaixo"></p>
             <div class="conteudo_inteligencia">
                 <div class="inteligencia_esquerdo">
                     <p>A Inteligência Artificial (IA) simula a capacidade humana de pensar, aprender e tomar decisões.
@@ -143,12 +163,13 @@
                 <div class="sobre_direito">
                     <h3 style="padding-top: 10%;">Nossas ferramentas:</h3>
                     <div class="ferramentas">
-                    <div class="img_sobre"><img id="carrosel-image" src="assets/aws.png"></div>
-                    <p id="carrosel-decricao">Amazon Web Services (AWS) é uma plataforma de serviços em nuvem que
-                        oferece uma ampla gama de soluções, incluindo armazenamento, processamento e gerenciamento de
-                        dados. AWS é conhecida por
-                        sua escalabilidade, flexibilidade e segurança.</p>
-                </div>
+                        <div class="img_sobre"><img id="carrosel-image" src="assets/aws.png"></div>
+                        <p id="carrosel-decricao">Amazon Web Services (AWS) é uma plataforma de serviços em nuvem que
+                            oferece uma ampla gama de soluções, incluindo armazenamento, processamento e gerenciamento
+                            de
+                            dados. AWS é conhecida por
+                            sua escalabilidade, flexibilidade e segurança.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -338,11 +359,35 @@
     });
 
     categorias.addEventListener('mousemove', (e) => {
-        if (!isDown) return; 
+        if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - categorias.offsetLeft;
-        const walk = (x - startX) * 3; 
+        const walk = (x - startX) * 3;
         categorias.scrollLeft = scrollLeft - walk;
     });
 
+    function menuShow() {
+        let menuMobile = document.querySelector('.mobile-menu');
+        let localEscuro = document.querySelector('main');
+
+        if (menuMobile.classList.contains('open')) {
+            menuMobile.classList.remove('open');
+            document.querySelector('.icon').src = "assets/menu.svg";
+            localEscuro.classList.remove('blurred-background');
+        } else {
+            menuMobile.classList.add('open');
+            document.querySelector('.icon').src = "assets/close.svg";
+            localEscuro.classList.add('blurred-background');
+        }
+    }
+
+    function removeEscuro() {
+        let menuMobile = document.querySelector('.mobile-menu');
+        let localEscuro = document.querySelector('main');
+
+        menuMobile.classList.remove('open');
+        document.querySelector('.icon').src = "assets/menu.svg";
+        localEscuro.classList.remove('blurred-background');
+
+    }
 </script>
