@@ -692,7 +692,7 @@ footer p {
     }
 
     header img.logo1 {
-        width: 35%;
+        width: 40%;
     }
 
     .menu-desktop-tablet{
@@ -763,7 +763,7 @@ footer p {
     .mobile-menu .nav-item a {
         text-decoration: none;
         color: white;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 500;
         transition: color 0.3s ease;
     }
@@ -773,7 +773,7 @@ footer p {
     }
     
     .login-button {
-        padding: 15px;
+        padding: 18px;
         text-align: left;
     }
     
