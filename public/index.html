@@ -4,7 +4,7 @@
 <head>
     <title>IntelliSense</title>
     <meta charset="UTF-8">
-    <meta name="viewport" localEscuro="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/5.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styleindex.css">
@@ -368,26 +368,26 @@
 
     function menuShow() {
         let menuMobile = document.querySelector('.mobile-menu');
-        let localEscuro = document.querySelector('main');
+        let content = document.querySelector('main');
 
         if (menuMobile.classList.contains('open')) {
             menuMobile.classList.remove('open');
             document.querySelector('.icon').src = "assets/menu.svg";
-            localEscuro.classList.remove('blurred-background');
+            content.classList.remove('blurred-background');
         } else {
             menuMobile.classList.add('open');
             document.querySelector('.icon').src = "assets/close.svg";
-            localEscuro.classList.add('blurred-background');
+            content.classList.add('blurred-background');
         }
     }
 
     function removeEscuro() {
         let menuMobile = document.querySelector('.mobile-menu');
-        let localEscuro = document.querySelector('main');
+        let content = document.querySelector('main');
 
         menuMobile.classList.remove('open');
         document.querySelector('.icon').src = "assets/menu.svg";
-        localEscuro.classList.remove('blurred-background');
+        content.classList.remove('blurred-background');
 
     }
 </script>
