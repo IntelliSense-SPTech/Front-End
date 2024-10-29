@@ -21,6 +21,8 @@
     />
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
+    <script src="../js/forum.js"></script>
+    <script src="../js/links.js"></script>
 </head>
 <body>
 
@@ -62,7 +64,7 @@
             </label>
             <div class="sub-menu">
               <ul>
-                <li><button type="button">Relatos</button></li>
+                <li><button type="button" onclick="irParaForum()">Relatos</button></li>
                 <li><button type="button">Avaliações</button></li>
               </ul>
             </div>
@@ -107,33 +109,20 @@
 
       <div class="relatos">
         <h2>Relatos</h2>
-        <div class="relato-card">
-            <div class="relato-header">
-                <p>
-                    <i class="fa-solid fa-user"></i>
-                    <strong>anônimo</strong>
-                </p>
-            </div>
-            <div class="relato-text">
-                <p>Ontem à noite, voltando pra casa depois do trabalho, fui assaltado na Vila Mariana. Dois caras numa moto apareceram do nada, um deles desceu já apontando uma arma pra mim e pedindo tudo que eu tinha. Sem pensar muito, entreguei o celular, carteira e relógio. Foi muito rápido, mas parecia que o tempo parou...</p>
-            </div>
+        <button onclick="listar()">Recarregar</button>
+        <div id="div_relatos">
+
         </div>
-        <div class="relato-card">
-            <div class="relato-header">
-                <p>
-                    <i class="fa-solid fa-user"></i>
-                    <strong>anônimo</strong>
-                </p>
-            </div>
-            <div class="relato-text">
-                <p>Ontem à noite, voltando pra casa depois do trabalho, fui assaltado na Vila Mariana. Dois caras numa moto apareceram do nada, um deles desceu já apontando uma arma pra mim e pedindo tudo que eu tinha. Sem pensar muito, entreguei o celular, carteira e relógio. Foi muito rápido...</p>
-            </div>
-        </div>
-        <button class="enviar-btn">Enviar relato</button>
-    </div>
+        
+        <!-- Faz esse botão abrir o modal -->
+        <button class="enviar-btn">Escrever relato</button> 
+
+        <!-- Põe isso no modal -->
+        <input type="text" placeholder="Descreva seu relato" id="input_descricao">
+        <button onclick="postar()" id="button_enviar_relato">Enviar relato</button>
+    </div> 
     
 
-      
         <div class="avaliacoes">
             <h2>Avaliações</h2>
             <div class="avaliacao-card">

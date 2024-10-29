@@ -13,3 +13,7 @@ function ia() {
 function irGit(){
     window.location.href = 'https://github.com/DataSecurity05/SiteInstitucional';
 }
+
+function irParaForum() {
+    window.location.href = './forum.html'
+}
