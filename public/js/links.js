@@ -1,9 +1,9 @@
 function irParaCadastro() {
-    window.location.href = './views/cadastro.html'
+    window.location.href = './cadastro.html'
 }
 
 function irParaLogin() {
-    window.location.href = './views/login.html'
+    window.location.href = './login.html'
 }
 
 function ia() {
@@ -16,4 +16,20 @@ function irGit(){
 
 function irParaForum() {
     window.location.href = './forum.html'
+}
+
+function irParaHome() {
+    window.location.href = '../index.html'
+}
+
+function irParaDashboardComum() {
+    window.location.href = './dashboarduser.html'
+}
+
+function irParaDashboardCorporativa() {
+    window.location.href = './dashboard.html'
+}
+
+function irParaAutenticacao() {
+    window.location.href = './autenticacao.html'
 }

@@ -18,10 +18,15 @@ function autenticar(req, res) {
                         console.log(resultadoAutenticar);
 
                         res.json({
-                            idUsuario: resultadoAutenticar[0].idUsuario,
+                            id_usuario: resultadoAutenticar[0].id_usuario,
+                            cim: resultadoAutenticar[0].cim,
                             nome: resultadoAutenticar[0].nome,
+                            tipo_usuario: resultadoAutenticar[0].tipo_usuario,
+                            cpf: resultadoAutenticar[0].cpf,
                             email: resultadoAutenticar[0].email,
                             senha: resultadoAutenticar[0].senha,
+                            token: resultadoAutenticar[0].token,
+                            telefone: resultadoAutenticar[0].telefone
                         });
 
                     } else if (resultadoAutenticar.length == 0) {
@@ -29,6 +34,42 @@ function autenticar(req, res) {
                     } else {
                         res.status(403).send("Mais de um usuário com o mesmo login e senha!");
                     }
+                }
+            )
+    }
+}
+
+function cadastrarCorporativo(req, res) {
+    let nome = req.body.nomeServer;
+    let telefone = req.body.telServer;
+    let email = req.body.emailServer;
+    let senha = req.body.senhaServer;
+    let CPF = req.body.CPFServer;
+    let CIM = req.body.CIMServer;
+    let token = req.body.tokenServer;
+
+    if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (telefone == undefined) {
+        res.status(400).send("Seu telefone está undefined!");
+    } else if (email == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (senha == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else if (CPF == undefined) {
+        res.status(400).send("Seu CPF está undefined!");
+    } else if (CIM == undefined) {
+        res.status(400).send("Seu CIM está undefined!");
+    } else if (token == undefined) {
+        res.status(400).send("Seu token está undefined!");
+    } else {
+
+        console.log(token)
+
+        usuarioModel.cadastrarCorporativo(nome, telefone, email, senha, CPF, CIM, token)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
                 }
             )
     }
@@ -58,5 +99,6 @@ function cadastrar(req, res) {
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    cadastrarCorporativo
 }
