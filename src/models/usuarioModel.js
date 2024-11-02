@@ -7,6 +7,13 @@ function autenticar(email, senha) {
     return database.executar(instrucaoSql);
 }
 
+function autenticarToken(token) {
+    var instrucaoSql = `
+        SELECT id_usuario, cim, nome, tipo_usuario, cpf, email, senha, token, telefone FROM usuarios WHERE token = '${token}';
+    `;
+    return database.executar(instrucaoSql);
+}
+
 function cadastrar(nome, email, senha) {
     var instrucaoSql = `
         INSERT INTO usuarios (nome, email, senha, tipo_usuario) VALUES 
@@ -27,5 +34,6 @@ function cadastrarCorporativo(nome, telefone, email, senha, CPF, CIM, token) {
 module.exports = {
     autenticar,
     cadastrar,
-    cadastrarCorporativo
+    cadastrarCorporativo,
+    autenticarToken
 };

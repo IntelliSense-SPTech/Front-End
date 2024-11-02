@@ -28,6 +28,8 @@ function enviarDados() {
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
+
+                alert('Dados enviados')
     
             } else {
                 console.log("ERRO: falha ao tentar realizar o cadastro!")

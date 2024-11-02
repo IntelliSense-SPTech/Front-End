@@ -39,6 +39,42 @@ function autenticar(req, res) {
     }
 }
 
+function autenticarToken(req, res) {
+    var token = req.body.tokenServer;
+
+    if (token == undefined) {
+        res.status(400).send("Seu token está undefined!");
+    } else {
+
+        usuarioModel.autenticarToken(token)
+            .then(
+                function (resultadoAutenticar) {
+
+                    if (resultadoAutenticar.length == 1) {
+                        console.log(resultadoAutenticar);
+
+                        res.json({
+                            id_usuario: resultadoAutenticar[0].id_usuario,
+                            cim: resultadoAutenticar[0].cim,
+                            nome: resultadoAutenticar[0].nome,
+                            tipo_usuario: resultadoAutenticar[0].tipo_usuario,
+                            cpf: resultadoAutenticar[0].cpf,
+                            email: resultadoAutenticar[0].email,
+                            senha: resultadoAutenticar[0].senha,
+                            token: resultadoAutenticar[0].token,
+                            telefone: resultadoAutenticar[0].telefone
+                        });
+
+                    } else if (resultadoAutenticar.length == 0) {
+                        res.status(403).send("Token inválido");
+                    } else {
+                        res.status(403).send("Mais de um usuário com o mesmo token");
+                    }
+                }
+            )
+    }
+}
+
 function cadastrarCorporativo(req, res) {
     let nome = req.body.nomeServer;
     let telefone = req.body.telServer;
@@ -100,5 +136,6 @@ function cadastrar(req, res) {
 module.exports = {
     autenticar,
     cadastrar,
-    cadastrarCorporativo
+    cadastrarCorporativo,
+    autenticarToken
 }

@@ -17,29 +17,24 @@
 
         <div class="corpo-login">
             <div class="corpo-titulo">
-            <div class="botao-voltar"><a href=""><</a></div>
+            <div class="botao-voltar" onclick="irParaLogin()"><</div>
             <div class="titulo"><img src="..\assets\2.png"></div>
              </div>  
              <p class="texto-token">Insira o seu token de segurança</p>
             <div class="corpo-inputs">
                 
-                <input type="number" class="inputs">
-                <input type="number" class="inputs">
-                <input type="number" class="inputs">
-                <input type="number" class="inputs">               
-                <input type="number" class="inputs">
-                <input type="number" class="inputs">
+                <input type="text" class="inputs" id="caractere_1">
+                <input type="text" class="inputs" id="caractere_2">
+                <input type="text" class="inputs" id="caractere_3">
+                <input type="text" class="inputs" id="caractere_4">               
+                <input type="text" class="inputs" id="caractere_5">
+                <input type="text" class="inputs" id="caractere_6">
 
                 
             </div>
-            <button class="botao-confirmar" onclick="confirmar()">Confirmar</button>
-
-           
-
-          
+            <button class="botao-confirmar" onclick="autenticarToken()">Confirmar</button>
 
         </div>
-
 
     </div>
 

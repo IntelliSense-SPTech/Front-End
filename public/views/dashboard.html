@@ -36,7 +36,7 @@
         <ul>
           <li>
             <input type="radio" id="dashboard" name="sidebar" />
-            <label for="dashboard">
+            <label for="dashboard" onclick="irParaDashboard()">
               <i class="fa-solid fa-chart-simple"></i>
               <p>Dashboard</p>
             </label>
@@ -60,29 +60,16 @@
             <input type="radio" id="forum" name="sidebar" />
             <label for="forum">
               <i class="fa-solid fa-comments"></i>
-              <p>Forum</p>
-              <i class="ai-chevron-down-small"></i>
+              <p onclick="irParaForum()">Forum</p>
             </label>
-            <div class="sub-menu">
-              <ul>
-                <li><button type="button" onclick="irParaForum()">Relatos</button></li>
-                <li><button type="button">Avaliações</button></li>
-              </ul>
-            </div>
           </li>
           <li>
             <input type="radio" id="perfil" name="sidebar" />
             <label for="perfil">
               <i class="fa-solid fa-user"></i>
-              <p>Perfil</p>
+              <p onclick="irParaPerfil()">Perfil</p>
               <i class="ai-chevron-down-small"></i>
             </label>
-            <div class="sub-menu">
-              <ul>
-                <li><button type="button">Avatar</button></li>
-                <li><button type="button">Temas</button></li>
-              </ul>
-            </div>
           </li>
           <li>
             <input type="radio" id="notificacoes" name="sidebar" />

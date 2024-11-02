@@ -15,4 +15,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.post("/autenticarToken", function (req, res) {
+    usuarioController.autenticarToken(req, res);
+});
+
 module.exports = router;
