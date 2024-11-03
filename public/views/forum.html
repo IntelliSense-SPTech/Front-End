@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Relatos e Avaliações</title>
     <link rel="stylesheet" href="../css/forum.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,15 +20,16 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/akar-icons-fonts"></script>
-    <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/65879fa723.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="../js/forum.js"></script>
     <script src="../js/links.js"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container">
-        
-            <aside class="sidebar">
+      <aside class="sidebar">
         <header>
           <img src="../assets/5 5.png" alt="Logo" />
         </header>
@@ -64,7 +65,9 @@
             </label>
             <div class="sub-menu">
               <ul>
-                <li><button type="button" onclick="irParaForum()">Relatos</button></li>
+                <li>
+                  <button type="button" onclick="irParaForum()">Relatos</button>
+                </li>
                 <li><button type="button">Avaliações</button></li>
               </ul>
             </div>
@@ -91,13 +94,6 @@
             </label>
           </li>
           <li>
-            <input type="radio" id="noticias" name="sidebar" />
-            <label for="conta">
-              <i class="fa-regular fa-newspaper"></i>
-              <p>Noticias</p>
-            </label>
-          </li>
-          <li>
             <input type="radio" id="conta" name="sidebar" />
             <label for="conta">
               <i class="fa-solid fa-lock"></i>
@@ -116,86 +112,131 @@
 
       <div class="relatos">
         <h2>Relatos</h2>
-        <button onclick="listar()">Recarregar</button>
-        <div id="div_relatos">
+        <button onclick="listar()"  class="enviar-btn">Recarregar</button>
+        <div id="div_relatos"></div>
 
-        </div>
         
-        <!-- Faz esse botão abrir o modal -->
-        <button class="enviar-btn">Escrever relato</button> 
+        <button id="escreverRelatoBtn" class="enviar-btn">
+          Escrever relato
+        </button>
 
-        <!-- Põe isso no modal -->
-        <input type="text" placeholder="Descreva seu relato" id="input_descricao">
-        <button onclick="postar()" id="button_enviar_relato">Enviar relato</button>
-    </div> 
-    
-
-        <div class="avaliacoes">
-            <h2>Avaliações</h2>
-            <div class="avaliacao-card">
-                <div class="avaliacao-header">
-                    <p><strong>usuário123</strong></p>
-                    <div class="rating">
-                        <input value="5" name="rate" id="star5" type="radio">
-                        <label title="text" for="star5"></label>
-                        <input value="4" name="rate" id="star4" type="radio">
-                        <label title="text" for="star4"></label>
-                        <input value="3" name="rate" id="star3" type="radio" checked="">
-                        <label title="text" for="star3"></label>
-                        <input value="2" name="rate" id="star2" type="radio">
-                        <label title="text" for="star2"></label>
-                        <input value="1" name="rate" id="star1" type="radio">
-                        <label title="text" for="star1"></label>
-                      </div>
-                </div>
-                <div class="avaliacao-text">
-                    <p>É necessário mais detalhes sobre segurança.</p>
-                </div>
-            </div>
-            <div class="avaliacao-card">
-                <div class="avaliacao-header">
-                    <p><strong>joaosilva77</strong></p>
-                    <div class="rating">
-                        <input value="5" name="rate" id="star5" type="radio">
-                        <label title="text" for="star5"></label>
-                        <input value="4" name="rate" id="star4" type="radio">
-                        <label title="text" for="star4"></label>
-                        <input value="3" name="rate" id="star3" type="radio" checked="">
-                        <label title="text" for="star3"></label>
-                        <input value="2" name="rate" id="star2" type="radio">
-                        <label title="text" for="star2"></label>
-                        <input value="1" name="rate" id="star1" type="radio">
-                        <label title="text" for="star1"></label>
-                      </div>
-                </div>
-                <div class="avaliacao-text">
-                    <p>Muito bom!!!</p>
-                </div>
-            </div>
-
+       
+        <div id="meuModal" class="modal">
+          <div class="modal-conteudo">
+            <span class="fechar">&times;</span>
+            <h2>Escreva seu relato</h2>
             
-            <div class="avaliacao-card">
-                <div class="avaliacao-header">
-                    <p><strong>CapitãoPiratas</strong></p>
-                    <div class="rating">
-                        <input value="5" name="rate" id="star5" type="radio">
-                        <label title="text" for="star5"></label>
-                        <input value="4" name="rate" id="star4" type="radio">
-                        <label title="text" for="star4"></label>
-                        <input value="3" name="rate" id="star3" type="radio" checked="">
-                        <label title="text" for="star3"></label>
-                        <input value="2" name="rate" id="star2" type="radio">
-                        <label title="text" for="star2"></label>
-                        <input value="1" name="rate" id="star1" type="radio">
-                        <label title="text" for="star1"></label>
-                      </div>
-                </div>
-                <div class="avaliacao-text">
-                    <p>Local ruim, as opções deveriam ser melhores.</p>
-                </div>
+            <div class="input-container">
+              <input
+                type="text"
+                placeholder=" "
+                id="input_descricao"
+                class="input_relato"
+                required
+              />
+              <label class="label" for="input_descricao">Descreva seu relato</label>
+              <div class="underline"></div>
             </div>
-            <button class="enviar-btn">Enviar avaliação</button>
+            <button onclick="postar()" id="button_enviar_relato" class="enviar-btn">
+              Enviar relato
+            </button>
+          </div>
         </div>
+      </div>
+
+      <div class="avaliacoes">
+        <h2>Avaliações</h2>
+        <div class="avaliacao-card">
+          <div class="avaliacao-header">
+            <p><strong>usuário123</strong></p>
+            <div class="rating">
+              <input value="5" name="rate" id="star5" type="radio" />
+              <label title="text" for="star5"></label>
+              <input value="4" name="rate" id="star4" type="radio" />
+              <label title="text" for="star4"></label>
+              <input value="3" name="rate" id="star3" type="radio" checked="" />
+              <label title="text" for="star3"></label>
+              <input value="2" name="rate" id="star2" type="radio" />
+              <label title="text" for="star2"></label>
+              <input value="1" name="rate" id="star1" type="radio" />
+              <label title="text" for="star1"></label>
+            </div>
+          </div>
+          <div class="avaliacao-text">
+            <p>É necessário mais detalhes sobre segurança.</p>
+          </div>
+        </div>
+        <div class="avaliacao-card">
+          <div class="avaliacao-header">
+            <p><strong>joaosilva77</strong></p>
+            <div class="rating">
+              <input value="5" name="rate" id="star5" type="radio" />
+              <label title="text" for="star5"></label>
+              <input value="4" name="rate" id="star4" type="radio" />
+              <label title="text" for="star4"></label>
+              <input value="3" name="rate" id="star3" type="radio" checked="" />
+              <label title="text" for="star3"></label>
+              <input value="2" name="rate" id="star2" type="radio" />
+              <label title="text" for="star2"></label>
+              <input value="1" name="rate" id="star1" type="radio" />
+              <label title="text" for="star1"></label>
+            </div>
+          </div>
+          <div class="avaliacao-text">
+            <p>Muito bom!!!</p>
+          </div>
+        </div>
+
+        <div class="avaliacao-card">
+          <div class="avaliacao-header">
+            <p><strong>CapitãoPiratas</strong></p>
+            <div class="rating">
+              <input value="5" name="rate" id="star5" type="radio" />
+              <label title="text" for="star5"></label>
+              <input value="4" name="rate" id="star4" type="radio" />
+              <label title="text" for="star4"></label>
+              <input value="3" name="rate" id="star3" type="radio" checked="" />
+              <label title="text" for="star3"></label>
+              <input value="2" name="rate" id="star2" type="radio" />
+              <label title="text" for="star2"></label>
+              <input value="1" name="rate" id="star1" type="radio" />
+              <label title="text" for="star1"></label>
+            </div>
+          </div>
+          <div class="avaliacao-text">
+            <p>Local ruim, as opções deveriam ser melhores.</p>
+          </div>
+        </div>
+        <button class="enviar-btn">Enviar avaliação</button>
+      </div>
     </div>
-</body>
+  </body>
 </html>
+
+<script>
+  // Obtém o modal
+  var modal = document.getElementById("meuModal");
+
+  // Obtém o botão específico que abre o modal usando o ID
+  var btn = document.getElementById("escreverRelatoBtn");
+
+  // Obtém o elemento <span> que fecha o modal
+  var span = document.querySelector(".fechar");
+
+  // Quando o usuário clica no botão, o modal é exibido
+  btn.onclick = function () {
+    modal.style.display = "block";
+  };
+
+  // Quando o usuário clica em <span> (x), o modal é fechado
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // Quando o usuário clica fora do modal, ele também é fechado
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
