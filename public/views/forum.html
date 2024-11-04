@@ -36,7 +36,7 @@
         <ul>
           <li>
             <input type="radio" id="dashboard" name="sidebar" />
-            <label for="dashboard">
+            <label for="dashboard" onclick="irParaDashboard()">
               <i class="fa-solid fa-chart-simple"></i>
               <p>Dashboard</p>
             </label>
@@ -58,39 +58,30 @@
           </li>
           <li>
             <input type="radio" id="forum" name="sidebar" />
-            <label for="forum">
+            <label for="forum" onclick="irParaForum()">
               <i class="fa-solid fa-comments"></i>
-              <p>Forum</p>
-              <i class="ai-chevron-down-small"></i>
+              <p onclick="irParaForum()">Forum</p>
             </label>
-            <div class="sub-menu">
-              <ul>
-                <li>
-                  <button type="button" onclick="irParaForum()">Relatos</button>
-                </li>
-                <li><button type="button">Avaliações</button></li>
-              </ul>
-            </div>
           </li>
           <li>
             <input type="radio" id="perfil" name="sidebar" />
-            <label for="perfil">
+            <label for="perfil" onclick="irParaPerfil()">
               <i class="fa-solid fa-user"></i>
               <p>Perfil</p>
-              <i class="ai-chevron-down-small"></i>
             </label>
-            <div class="sub-menu">
-              <ul>
-                <li><button type="button">Avatar</button></li>
-                <li><button type="button">Temas</button></li>
-              </ul>
-            </div>
           </li>
           <li>
             <input type="radio" id="notificacoes" name="sidebar" />
             <label for="notificacoes">
               <i class="fa-solid fa-bell"></i>
               <p>Notificações</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="noticias" name="sidebar" />
+            <label for="conta" onclick="irParaNoticias()">
+              <i class="fa-regular fa-newspaper"></i>
+              <p>Noticias</p>
             </label>
           </li>
           <li>
@@ -102,14 +93,13 @@
           </li>
           <li>
             <input type="radio" id="conta" name="sidebar" />
-            <label for="conta">
+            <label for="conta" onclick="irParaHome()">
               <i class="fa-solid fa-person-through-window"></i>
               <p>Sair</p>
             </label>
           </li>
         </ul>
       </aside>
-
       <div class="relatos">
         <h2>Relatos</h2>
         <button onclick="listar()"  class="enviar-btn">Recarregar</button>

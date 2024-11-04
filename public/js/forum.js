@@ -1,5 +1,8 @@
 function postar() {
-    let relatoNovo = input_descricao.value;    
+    let relatoNovo = document.getElementById('input_descricao').value
+
+    const idUsuario = sessionStorage.getItem("ID_USUARIO");
+
 
     if (relatoNovo == "") {
         alert("Insira um texto")
@@ -10,7 +13,7 @@ function postar() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                idUsuarioServer: 1,
+                idUsuarioServer: idUsuario,
                 relatoServer: relatoNovo
             })
         }).then(function (resposta) {
@@ -45,7 +48,7 @@ function listar() {
                         <div class="relato-header">
                         <p>
                             <i class="fa-solid fa-user"></i>
-                            <strong>anônimo</strong>
+                            <strong>${relato.NomeUsuario}</strong>
                             </p>
                         </div>
                         <div class="relato-text">

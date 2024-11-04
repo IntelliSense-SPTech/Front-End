@@ -93,7 +93,7 @@ function cadastrar() {
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                alert("Entrou")
+                alert("Usuário cadastrado com sucesso")
     
             } else {
                 console.log("ERRO: falha ao tentar realizar o cadastro!")

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeção</title>
+    <title>Noticias</title>
     <link rel="stylesheet" href="../css/noticias.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,96 +17,83 @@
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/links.js"></script>
 
 </head>
 
 <body>
     <div class="container">
-        <aside class="sidebar">
-            <header>
-                <img src="../assets/5 5.png" alt="Logo" />
-            </header>
-            <ul>
-                <li>
-                    <input type="radio" id="dashboard" name="sidebar" />
-                    <label for="dashboard">
-                        <i class="fa-solid fa-chart-simple"></i>
-                        <p>Dashboard</p>
-                    </label>
-                </li>
-                <li>
-                    <input type="radio" id="mapas" name="sidebar" />
-                    <label for="mapas">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        <p>Regiões</p>
-                        <i class="ai-chevron-down-small"></i>
-                    </label>
-                    <div class="sub-menu">
-                        <ul>
-                            <li><button type="button">São Paulo</button></li>
-                            <li><button type="button">Capital</button></li>
-                            <li><button type="button">Litoral</button></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <input type="radio" id="forum" name="sidebar" />
-                    <label for="forum">
-                        <i class="fa-solid fa-comments"></i>
-                        <p>Forum</p>
-                        <i class="ai-chevron-down-small"></i>
-                    </label>
-                    <div class="sub-menu">
-                        <ul>
-                            <li><button type="button">Relatos</button></li>
-                            <li><button type="button">Avaliações</button></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <input type="radio" id="perfil" name="sidebar" />
-                    <label for="perfil">
-                        <i class="fa-solid fa-user"></i>
-                        <p>Perfil</p>
-                        <i class="ai-chevron-down-small"></i>
-                    </label>
-                    <div class="sub-menu">
-                        <ul>
-                            <li><button type="button">Avatar</button></li>
-                            <li><button type="button">Temas</button></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <input type="radio" id="notificacoes" name="sidebar" />
-                    <label for="notificacoes">
-                        <i class="fa-solid fa-bell"></i>
-                        <p>Notificações</p>
-                    </label>
-                </li>
-                <li>
-                  <input type="radio" id="noticias" name="sidebar" />
-                  <label for="conta">
-                    <i class="fa-regular fa-newspaper"></i>
-                    <p>Noticias</p>
-                  </label>
-                </li>
-                <li>
-                    <input type="radio" id="conta" name="sidebar" />
-                    <label for="conta">
-                        <i class="fa-solid fa-lock"></i>
-                        <p>Conta</p>
-                    </label>
-                </li>
-                <li>
-                    <input type="radio" id="conta" name="sidebar" />
-                    <label for="conta">
-                        <i class="fa-solid fa-person-through-window"></i>
-                        <p>Sair</p>
-                    </label>
-                </li>
-            </ul>
-        </aside>
+      <aside class="sidebar">
+        <header>
+          <img src="../assets/5 5.png" alt="Logo" />
+        </header>
+        <ul>
+          <li>
+            <input type="radio" id="dashboard" name="sidebar" />
+            <label for="dashboard" onclick="irParaDashboard()">
+              <i class="fa-solid fa-chart-simple"></i>
+              <p>Dashboard</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="mapas" name="sidebar" />
+            <label for="mapas">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <p>Regiões</p>
+              <i class="ai-chevron-down-small"></i>
+            </label>
+            <div class="sub-menu">
+              <ul>
+                <li><button type="button">São Paulo</button></li>
+                <li><button type="button">Capital</button></li>
+                <li><button type="button">Litoral</button></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <input type="radio" id="forum" name="sidebar" />
+            <label for="forum" onclick="irParaForum()">
+              <i class="fa-solid fa-comments"></i>
+              <p onclick="irParaForum()">Forum</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="perfil" name="sidebar" />
+            <label for="perfil" onclick="irParaPerfil()">
+              <i class="fa-solid fa-user"></i>
+              <p>Perfil</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="notificacoes" name="sidebar" />
+            <label for="notificacoes">
+              <i class="fa-solid fa-bell"></i>
+              <p>Notificações</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="noticias" name="sidebar" />
+            <label for="conta" onclick="irParaNoticias()">
+              <i class="fa-regular fa-newspaper"></i>
+              <p>Noticias</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="conta" name="sidebar" />
+            <label for="conta">
+              <i class="fa-solid fa-lock"></i>
+              <p>Conta</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="conta" name="sidebar" />
+            <label for="conta" onclick="irParaHome()">
+              <i class="fa-solid fa-person-through-window"></i>
+              <p>Sair</p>
+            </label>
+          </li>
+        </ul>
+      </aside>
 
         <div class="container">
             <div class="notice-section">

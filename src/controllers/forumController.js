@@ -1,8 +1,7 @@
 var forumModel = require("../models/forumModel.js")
 
 function postar(req, res) {
-    // var idUsuario = req.body.idUsuarioServer
-    let idUsuario = 1;
+    var idUsuario = req.body.idUsuarioServer;
     var relato = req.body.relatoServer;
 
         forumModel.postar(idUsuario, relato)
