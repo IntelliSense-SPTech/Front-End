@@ -51,22 +51,16 @@ function validarSenha() {
 }
 
 function validarInputs() {
-    const senha = document.getElementById("input_senha").value;
-    const confirmacao = document.getElementById("input_confirmacao").value;
 
+    if (!verificarNome()) {
+        return;
+    }
 
     if (!verificaEmail()) {
         return;
     }
 
     if (!validarSenha()) {
-        return;
-    }
-
-    if (senha !== confirmacao) {
-        const mensagemModal = document.getElementById("modal-message");
-        mensagemModal.textContent = "As senhas não coincidem.";
-        document.getElementById("modal").style.display = "block";
         return;
     }
 

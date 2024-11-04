@@ -1,3 +1,56 @@
+function fecharModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function verificaEmail() {
+    const emailInformado = document.getElementById("input_email").value;
+    const modal = document.getElementById("modal");
+    const mensagemModal = document.getElementById("modal-message");
+
+    if (emailInformado.indexOf("@") === -1) {
+        mensagemModal.textContent = "O email deve conter '@'.";
+        modal.style.display = "block";
+        return false;
+    } else if (emailInformado.length === 0) {
+        mensagemModal.textContent = "Tamanho do email inválido.";
+        modal.style.display = "block";
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+function validarSenha() {
+    const senha = document.getElementById("input_senha").value;
+    const temMaiuscula = /[A-Z]/.test(senha);
+    const temMinuscula = /[a-z]/.test(senha);
+    const temEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(senha);
+    const temMinimoCaracteres = senha.length >= 6;
+
+    if (temMaiuscula && temMinuscula && temEspecial && temMinimoCaracteres) {
+        return true;
+    } else {
+        const mensagemModal = document.getElementById("modal-message");
+        mensagemModal.textContent = "A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um caractere especial e ter no mínimo 6 caracteres.";
+        document.getElementById("modal").style.display = "block";
+        return false;
+    }
+}
+
+function validarInputs() {
+
+    if (!verificaEmail()) {
+        return;
+    }
+
+    if (!validarSenha()) {
+        return;
+    }
+
+    entrar()
+}
+
 function entrar() {
     const email = document.getElementById("input_email").value;
     const senha = document.getElementById("input_senha").value;
@@ -79,8 +132,6 @@ function autenticarToken() {
             sessionStorage.EMAIL = data.email;
             sessionStorage.TIPO_USUARIO = data.tipo_usuario
 
-            
-            
         })
         .catch(error => {
             console.error("Erro durante a autenticação:", error);

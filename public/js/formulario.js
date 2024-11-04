@@ -7,7 +7,27 @@ function enviarDados() {
     const CIM = input_CIM.value
     const token = gerarToken()
     
-    // Aplicar validações
+    if (!nome || !telefone || !email || !senha || !CPF || !CIM) {
+        alert('Por favor, preencha todos os campos.');
+        return false;
+    }
+
+    if (!validarEmail(email)) {
+        alert('Por favor, insira um email válido (deve conter "@" e um domínio)');
+        return false;
+    }
+
+    if (!validarCPF(CPF)) {
+        alert('Por favor, insira um CPF válido (somente os números)');
+        return false;
+    }
+
+    if (!validarCIM(CIM)) {
+        alert('Por favor, insira um CIM válido (somente os números)');
+        return false;
+    }
+   
+
 
     fetch("/usuarios/cadastrarCorporativo", {
         method: "POST",
@@ -48,3 +68,15 @@ function gerarToken() {
     }
     return token;
   }
+
+function validarEmail(email) {
+    return email.includes("@") && email.includes(".");
+}
+
+function validarCPF(CPF) {
+    return CPF.length === 11;
+}
+
+function validarCIM(CIM) {
+    return CIM.length === 9;
+}
