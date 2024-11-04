@@ -64,7 +64,7 @@ function autenticarToken() {
     })
         .then(response => {
             if (response.ok) {
-                console.log('to aqui:' + response)
+                irParaDashboardCorporativa()
                 return response.json();
             } else {
                 throw new Error("Token invalido");
@@ -79,7 +79,7 @@ function autenticarToken() {
             sessionStorage.EMAIL = data.email;
             sessionStorage.TIPO_USUARIO = data.tipo_usuario
 
-            irParaDashboardCorporativa()
+            
             
         })
         .catch(error => {
