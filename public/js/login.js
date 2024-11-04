@@ -7,17 +7,16 @@ function verificaEmail() {
     const modal = document.getElementById("modal");
     const mensagemModal = document.getElementById("modal-message");
 
-    if (emailInformado.indexOf("@") === -1) {
+    if (emailInformado.length === 0) {
+        mensagemModal.textContent = "O campo de email não pode estar vazio.";
+        modal.style.display = "block";
+        return false;
+    } else if (emailInformado.indexOf("@") === -1) {
         mensagemModal.textContent = "O email deve conter '@'.";
         modal.style.display = "block";
         return false;
-    } else if (emailInformado.length === 0) {
-        mensagemModal.textContent = "Tamanho do email inválido.";
-        modal.style.display = "block";
-        return false;
-    } else {
-        return true;
     }
+    return true;
 }
 
 
