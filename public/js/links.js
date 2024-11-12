@@ -1,3 +1,9 @@
+function irParaProjecao() {
+    alert("teste")
+    window.location.href = './projecao.html'
+    
+}
+
 function irParaCadastro() {
     window.location.href = './cadastro.html'
 }
@@ -50,5 +56,14 @@ function irParaNoticias() {
 
 function irParaPerfil() {
     window.location.href = './perfil.html'
+}
+function irParaForumUser() {
+    window.location.href = './forumuser.html'
+}
+function irParaPerfilUser() {
+    window.location.href = './perfiluser.html'
+}
+function irParaHomeUser() {
+    window.location.href = '../../index.html'
 }
 

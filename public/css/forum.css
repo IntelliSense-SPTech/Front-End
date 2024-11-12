@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Tomorrow;
 }
 
 body {
@@ -12,6 +12,23 @@ body {
     align-items: flex-start;
     justify-content: flex-start;
 }
+.nome-usuario-style{
+    color: #223C62;
+    font-family: Tomorrow;
+    font-size: 24px;
+    margin-left: 4px;
+
+}
+.nome-div{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+
+}
+
 
 .sidebar {
     position: fixed;

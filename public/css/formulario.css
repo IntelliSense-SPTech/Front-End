@@ -20,6 +20,23 @@ body {
 
 
 }
+.nome-usuario-style{
+    color: #223C62;
+    font-family: Tomorrow;
+    font-size: 24px;
+    margin-left: 4px;
+
+}
+.nome-div{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+
+}
+
 
 .corpo-titulo {
     display: flex;
