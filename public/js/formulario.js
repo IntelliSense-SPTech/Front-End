@@ -27,8 +27,6 @@ function enviarDados() {
         return false;
     }
    
-
-
     fetch("/usuarios/cadastrarCorporativo", {
         method: "POST",
         headers: {
@@ -50,6 +48,7 @@ function enviarDados() {
             if (resposta.ok) {
 
                 alert('Dados enviados')
+                enviarEmail(email, nome, token)
     
             } else {
                 console.log("ERRO: falha ao tentar realizar o cadastro!")
@@ -80,3 +79,21 @@ function validarCPF(CPF) {
 function validarCIM(CIM) {
     return CIM.length === 9;
 }
+
+
+function enviarEmail(destinatario, nome, token) {
+
+    const parametros = {
+        to_email: destinatario,
+        to_name: nome,
+        token: token,
+    };
+
+    emailjs.send("service_pm8abqn", "template_9tfwubs", parametros)
+        .then((response) => {
+            console.log("Email enviado com sucesso!", response.status, response.text);
+        }, (error) => {
+            console.error("Erro ao enviar email:", error);
+        });
+}
+
