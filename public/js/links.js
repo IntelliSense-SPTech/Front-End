@@ -1,5 +1,4 @@
 function irParaProjecao() {
-    alert("teste")
     window.location.href = './projecao.html'
     
 }
@@ -21,23 +20,47 @@ function ia() {
 }
 
 function irGit(){
-    window.location.href = 'https://github.com/DataSecurity05/SiteInstitucional';
+    window.location.href = 'https://github.com/IntelliSense-SPTech';
 }
 
 function irParaForum() {
-    window.location.href = './forum.html'
+    const tipo_usuario = sessionStorage.getItem("TIPO_USUARIO");
+
+    if (tipo_usuario == 'comum') {
+        window.location.href = './forumuser.html'
+    } else {
+        window.location.href = './forum.html'
+    }
 }
 
 function irParaHome() {
-    window.location.href = '../index.html'
+    window.location.href = '../../index.html'
 }
 
 function irParaDashboardComum() {
-    window.location.href = './dashboarduser.html'
+    window.location.href = './comum/dashboarduser.html'
 }
 
 function irParaDashboardCorporativa() {
-    window.location.href = './dashboard.html'
+    window.location.href = './corporativo/dashboard.html'
+}
+
+function irParaPlanoAcao() {
+    window.location.href = './plano-acao.html'
+}
+
+function irParaNoticias() {
+    window.location.href = './noticias.html'
+}
+
+function irParaPerfil() {
+    const tipo_usuario = sessionStorage.getItem("TIPO_USUARIO");
+
+    if (tipo_usuario == 'comum') {
+        window.location.href = './perfiluser.html'
+    } else {
+        window.location.href = './perfil.html'
+    }
 }
 
 function irParaDashboard() {
@@ -50,20 +73,13 @@ function irParaDashboard() {
     }
 }
 
-function irParaNoticias() {
-    window.location.href = './noticias.html'
-}
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('nome-usuario').textContent = sessionStorage.getItem("NOME");
+});
 
-function irParaPerfil() {
-    window.location.href = './perfil.html'
-}
-function irParaForumUser() {
-    window.location.href = './forumuser.html'
-}
-function irParaPerfilUser() {
-    window.location.href = './perfiluser.html'
-}
-function irParaHomeUser() {
-    window.location.href = '../../index.html'
-}
 
+
+
+
+
+  
