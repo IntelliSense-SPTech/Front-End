@@ -173,13 +173,13 @@ body {
 
 .container {
     display: flex;
-    padding: 20px;
+
     border-radius: 10px;
     margin-left: 150px;
 }
 
 .notice-section {
-    width: 1000px;
+    width: 68vw;
     padding: 20px;
     background-color: #FFF;
     margin-left: 20px;
@@ -188,6 +188,7 @@ body {
     height: 600px;
     overflow-y: auto; 
     box-sizing: border-box; 
+   margin-top: 6vh;
 }
 
 
