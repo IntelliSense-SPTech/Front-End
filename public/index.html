@@ -223,25 +223,25 @@
                         <div class="parte_a_contato">
                             <div class="secao_input nome_input">
                                 <span class="titulo_input">Nome Completo</span>
-                                <input class="input" type="text" placeholder="Insira seu nome aqui">
+                                <input class="input input_nome" name="nome" type="text" placeholder="Insira seu nome aqui" required>
                             </div>
                             <div class="secao_input telefone_input">
                                 <span class="titulo_input">Telefone</span>
-                                <input class="input" type="text" placeholder="Insira seu telefone aqui">
+                                <input class="input input_telefone" name="telefone" type="text" placeholder="Insira seu telefone aqui">
                             </div>
                         </div>
                         <div class="secao_input">
                             <span class="titulo_input">Email</span>
-                            <input class="input input_email" type="text" placeholder="Insira seu email aqui">
+                            <input class="input input_email" name="email" type="email" placeholder="Insira seu email aqui" required>
                         </div>
                         <div class="secao_input">
                             <span class="titulo_input">Mensagem</span>
-                            <textarea class="input input_mensagem" type="text"
-                                placeholder="Digite sua mensagem aqui"></textarea>
+                            <textarea class="input input_mensagem" name="mensagem" placeholder="Digite sua mensagem aqui" required></textarea>
                         </div>
                     </div>
-                    <button class="btn_contato">Enviar</button>
+                    <button class="btn_contato" type="button">Enviar</button>
                 </div>
+                
             </div>
             <div class="implementar">
                 <a href="views/formulario-imp.html">Implementar nossa solução</a> <span>+</span>
@@ -390,4 +390,5 @@
         content.classList.remove('blurred-background');
 
     }
+
 </script>

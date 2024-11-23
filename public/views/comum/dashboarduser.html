@@ -94,37 +94,9 @@
             </div>
           </div>
         </header>
-        <section class="overview">
-          <div class="crime-box total-crimes-gsp">
-            <h2>Total de crimes (Grande São Paulo)</h2>
-            <p class="number yellow">289</p>
-          </div>
-          <div class="crime-box total-crimes-capital">
-            <h2>Total de crimes (Capital)</h2>
-            <p class="number red">467</p>
-          </div>
-          <div class="crime-box total-crimes-litoral">
-            <h2>Total de crimes (Litoral)</h2>
-            <p class="number green">916</p>
-          </div>
-        </section>
+        
 
-        <section class="crime-charts">
-          <div class="chart">
-            <h3>
-              Comparação dos crimes
-              <div class="dropdown" style="display: inline-block; background-color: #223C62; color: white; border-radius: 20px;">
-                <button class="dropdown-btn" style="background-color: #223C62; color: white; border-radius: 20px;">Selecione</button>
-                <div class="dropdown-content">
-                  <a href="#">Capital</a>
-                  <a href="#">Santos</a>
-                  <a href="#">Grande São Paulo excluindo a capital</a>
-                </div>
-              </div>
-            </h3>
-            <canvas id="gspChart" style="width: 100%; height: auto;"></canvas>
-          </div>
-        </section>
+        
         
 
         </section>
@@ -143,7 +115,49 @@
             <h3>Capital</h3>
             
           </div>
+          <div class="chart">
+            <h3>Mês com mais incidentes</h3>
+            <br>
+            <br>
+            <h3>Julho</h3>
+            
+          </div>
         </section>
+
+        <section class="overview">
+          <div class="crime-box total-crimes-gsp">
+            <h2>Total de crimes (Grande São Paulo)</h2>
+            <p class="number yellow">289</p>
+          </div>
+          <div class="crime-box total-crimes-capital">
+            <h2>Total de crimes (Capital)</h2>
+            <p class="number red">467</p>
+          </div>
+          <div class="crime-box total-crimes-litoral">
+            <h2>Total de crimes (Litoral)</h2>
+            <p class="number green">916</p>
+          </div>
+        </section>
+
+
+        <section class="crime-charts">
+          <div class="chart">
+            
+           
+              <div class="dropdown" style="display: inline-block; background-color: #223C62; color: white; border-radius: 20px;">
+                <button class="dropdown-btn" style="background-color: #223C62; color: white; border-radius: 20px;">Selecione</button>
+                <div class="dropdown-content">
+                  <a href="#">Capital</a>
+                  <a href="#">Santos</a>
+                  <a href="#">Grande São Paulo excluindo a capital</a>
+                </div>
+              </div>
+          
+            <canvas id="gspChart" style="width: 100%; height: auto;"></canvas>
+          </div>
+        </section>
+
+
       </main>
     </div>
 
@@ -156,7 +170,7 @@
           labels: ["Furto", "Roubo", "Latrocínio"],
           datasets: [
             {
-              label: "Crimes",
+              label: "Comparação dos crimes",
               data: [120, 150, 19], // Dados simulados
               backgroundColor: ["#F4D35E", "#E63946", "#2A9D8F"],
             },
