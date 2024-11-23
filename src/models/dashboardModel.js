@@ -71,7 +71,8 @@ function getTotalCrimesLocalidadeMensal(ano) {
 
 function getUltimaAtualizacao() {
     var instrucaoSql = `
-    SELECT MAX(mes) as ultimoMes, MAX(ano) as ultimoAno FROM crimes;  
+    SELECT MAX(mes) as ultimoMes, MAX(ano) as ultimoAno FROM crimes
+    WHERE ano = (SELECT MAX(ano) FROM crimes);
 `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
