@@ -342,3 +342,78 @@ canvas {
 }
 
 
+.notification {
+    padding: 15px;
+    /* margin: 10px 0; */
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around; 
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notification p {
+    margin: 0;
+}
+
+.notification.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 5px solid #28a745;
+    width: 850px;
+    height: 110px;
+}
+
+.notification.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 5px solid #dc3545;
+    width: 850px;
+    height: 110px;
+}
+
+.notification.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-left: 5px solid #ffc107;
+    width: 850px;
+    height: 110px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.close-btn:before,
+.close-btn:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 1px;
+}
+
+.close-btn:before {
+    transform: rotate(45deg);
+}
+
+.close-btn:after {
+    transform: rotate(-45deg);
+    animation-duration: 3s;
+}
+
