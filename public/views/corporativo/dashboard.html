@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="../../css/dashboard.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +24,6 @@
     />
     <script src="https://unpkg.com/akar-icons-fonts"></script>
     <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../../js/links.js"></script>
     <script src="../../js/dashboard.js"></script>
   
@@ -101,8 +101,8 @@
         <header>
           <div class="header-content">
             <h1>
-              Painel de Dados sobre Roubos, Furtos e Latrocínios em São Paulo
-            </h1>
+              Painel de Dados sobre Roubos, Furtos e Latrocínios em São Paulo 
+            </h1><p class="ultima-atualizacao" id="ultimaAtualizacao">Ultima atualização - 07/24</p>
             <select class="dropdown" id="select_ano" onchange="main()">
               <option value="2024">2024</option>
               <option value="2023">2023</option>
@@ -152,183 +152,185 @@
         </section>
       </main>
     </div>
-
-    <script>
-      // Gráfico de barras: Grande São Paulo
-      var gspCtx = document.getElementById("gspChart").getContext("2d");
-      new Chart(gspCtx, {
-        type: "bar",
-        data: {
-          labels: ["Furto", "Roubo", "Latrocínio"],
-          datasets: [
-            {
-              label: "Crimes",
-              data: [120, 150, 19], // Dados simulados
-              backgroundColor: ["#F4D35E", "#E63946", "#2A9D8F"],
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: { beginAtZero: true },
-          },
-        },
-      });
-
-      // Gráfico de barras: Capital
-      var capitalCtx = document.getElementById("capitalChart").getContext("2d");
-      new Chart(capitalCtx, {
-        type: "bar",
-        data: {
-          labels: ["Furto", "Roubo", "Latrocínio"],
-          datasets: [
-            {
-              label: "Crimes",
-              data: [100, 180, 30], // Dados simulados
-              backgroundColor: ["#F4D35E", "#E63946", "#2A9D8F"],
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: { beginAtZero: true },
-          },
-        },
-      });
-
-      // Gráfico de barras: Litoral
-      var litoralCtx = document.getElementById("litoralChart").getContext("2d");
-      new Chart(litoralCtx, {
-        type: "bar",
-        data: {
-          labels: ["Furto", "Roubo", "Latrocínio"],
-          datasets: [
-            {
-              label: "Crimes",
-              data: [90, 170, 45], // Dados simulados
-              backgroundColor: ["#F4D35E", "#E63946", "#2A9D8F"],
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: { beginAtZero: true },
-          },
-        },
-      });
-
-      // Gráfico de linha: Total de crimes
-      var totalCrimesCtx = document
-        .getElementById("totalCrimesChart")
-        .getContext("2d");
-      new Chart(totalCrimesCtx, {
-        type: "line",
-        data: {
-          labels: [
-            "Jan",
-            "Fev",
-            "Mar",
-            "Abr",
-            "Mai",
-            "Jun",
-            "Jul",
-            "Ago",
-            "Set",
-            "Out",
-            "Nov",
-            "Dez",
-          ],
-          datasets: [
-            {
-              label: "Furto",
-              data: [
-                200, 250, 300, 450, 500, 350, 400, 600, 700, 500, 600, 550,
-              ],
-              borderColor: "#F4D35E",
-              fill: false,
-            },
-            {
-              label: "Roubo",
-              data: [
-                300, 400, 450, 500, 600, 700, 750, 800, 900, 700, 800, 850,
-              ],
-              borderColor: "#E63946",
-              fill: false,
-            },
-            {
-              label: "Latrocínio",
-              data: [50, 60, 80, 100, 90, 100, 110, 120, 130, 110, 120, 130],
-              borderColor: "#2A9D8F",
-              fill: false,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: { beginAtZero: true },
-          },
-        },
-      });
-
-      // Gráfico de linha: Total de crimes por região
-      var regionCrimesCtx = document
-        .getElementById("regionCrimesChart")
-        .getContext("2d");
-      new Chart(regionCrimesCtx, {
-        type: "line",
-        data: {
-          labels: [
-            "Jan",
-            "Fev",
-            "Mar",
-            "Abr",
-            "Mai",
-            "Jun",
-            "Jul",
-            "Ago",
-            "Set",
-            "Out",
-            "Nov",
-            "Dez",
-          ],
-          datasets: [
-            {
-              label: "Grande São Paulo",
-              data: [
-                150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700,
-              ],
-              borderColor: "#F4D35E",
-              fill: false,
-            },
-            {
-              label: "Capital",
-              data: [
-                250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800,
-              ],
-              borderColor: "#E63946",
-              fill: false,
-            },
-            {
-              label: "Litoral",
-              data: [
-                100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650,
-              ],
-              borderColor: "#2A9D8F",
-              fill: false,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: { beginAtZero: true },
-          },
-        },
-      });
-    </script>
   </body>
 </html>
+
+<script>
+  // Gráfico de barras: Grande São Paulo
+  var gspCtx = document.getElementById("gspChart").getContext("2d");
+  let barrasGsp = new Chart(gspCtx, {
+    type: "bar",
+    data: {
+      labels: ["Roubo", "Furto", "Latrocínio"],
+      datasets: [
+        {
+          label: "Quantidade de crimes",
+          data: [], 
+          backgroundColor: ["#1483CD"],
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true },
+      },
+    },
+  });
+
+  // Gráfico de barras: Capital
+  var capitalCtx = document.getElementById("capitalChart").getContext("2d");
+  let barrasCapital = new Chart(capitalCtx, {
+    type: "bar",
+    data: {
+      labels: ["Roubo", "Furto", "Latrocínio"],
+      datasets: [
+        {
+          label: "Quantidade de crimes",
+          data: [], 
+          backgroundColor: ["#1483CD"]
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true },
+      },
+    },
+  });
+
+  // Gráfico de barras: Litoral
+  var litoralCtx = document.getElementById("litoralChart").getContext("2d");
+  let barrasLitoral = new Chart(litoralCtx, {
+    type: "bar",
+    data: {
+      labels: ["Roubo", "Furto", "Latrocínio"],
+      datasets: [
+        {
+          label: "Quantidade de crimes",
+          data: [], 
+          backgroundColor: ["#1483CD"]
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true },
+      },
+    },
+  });
+
+  // Gráfico de linha: Total de crimes
+  var totalCrimesCtx = document
+    .getElementById("totalCrimesChart")
+    .getContext("2d");
+  let linhaTotalCrimes = new Chart(totalCrimesCtx, {
+    type: "line",
+    data: {
+      labels: [
+        "Jan",
+        "Fev",
+        "Mar",
+        "Abr",
+        "Mai",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Set",
+        "Out",
+        "Nov",
+        "Dez",
+      ],
+      datasets: [
+        {
+          label: "Furto",
+          data: [
+            
+          ],
+          borderColor: "#8461C0",
+          fill: false,
+        },
+        {
+          label: "Roubo",
+          data: [
+            
+          ],
+          borderColor: "#3B70A2",
+          fill: false,
+        },
+        {
+          label: "Latrocínio",
+          data: [
+
+          ],
+          borderColor: "#138F7A",
+          fill: false,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true },
+      },
+    },
+  });
+
+  // Gráfico de linha: Total de crimes por região
+  var regionCrimesCtx = document
+    .getElementById("regionCrimesChart")
+    .getContext("2d");
+  let linhaTotalCrimesRegiao = new Chart(regionCrimesCtx, {
+    type: "line",
+    data: {
+      labels: [
+        "Jan",
+        "Fev",
+        "Mar",
+        "Abr",
+        "Mai",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Set",
+        "Out",
+        "Nov",
+        "Dez",
+      ],
+      datasets: [
+        {
+          label: "Grande São Paulo",
+          data: [
+           
+          ],
+          borderColor: "#8461C0",
+          fill: false,
+        },
+        {
+          label: "Capital",
+          data: [
+            
+          ],
+          borderColor: "#3B70A2",
+          fill: false,
+        },
+        {
+          label: "Litoral",
+          data: [
+            
+          ],
+          borderColor: "#2A9D8F",
+          fill: false,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true },
+      },
+    },
+  });
+</script>
