@@ -97,23 +97,17 @@
         <section class="line-charts">
           <div class="chart">
             <h3>Crime com mais incidencias</h3>
-            <br>
-            <br>
-            <h3 id="id_crime_mais_incidencias"></h3>
+            <p class="text" id="id_crime_mais_incidencias"></p>
             
           </div>
           <div class="chart">
             <h3>Região com mais incidencias</h3>
-            <br>
-            <br>
-            <h3 id="id_regiao_mais_incidencias"></h3>
+            <p class="text" id="id_regiao_mais_incidencias"></p>
             
           </div>
           <div class="chart">
-            <h3>Mês com mais incidentes</h3>
-            <br>
-            <br>
-            <h3 id="id_mes_mais_incidencias"></h3>
+            <h3>Mês com mais incidencias</h3>
+            <p class="text" id="id_mes_mais_incidencias"></p>
             
           </div>
         </section>
@@ -136,15 +130,14 @@
 
         <section class="crime-charts">
           <div class="chart">
-            
-           
-            <select class="dropdown" id="select_localidade" onchange="main()">
+            <h2>Total de crimes da região</h2>
+            <select class="select-regiao" id="select_localidade" onchange="main()">
               <option value="Capital">Capital</option>
               <option value="Grande São Paulo">Grande São Paulo</option>
               <option value="Litoral">Litoral</option>
             </select> 
           
-            <canvas id="gspChart" style="width: 100%; height: auto;"></canvas>
+            <canvas id="gspChart" style="width: 100%; height: 80%;"></canvas>
           </div>
         </section>
 
@@ -176,10 +169,6 @@
     <i class="icon fa-solid fa-triangle-exclamation fa-2x"></i>
 
 </div> -->
-
-    
-    
-
 
     </div>
 

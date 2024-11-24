@@ -1,20 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Tomorrow;
 }
 
 body {
+    font-family: "Raleway", sans-serif;
     background-color: #223C62;
-    padding: 20px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
 }
+
+
 .nome-usuario-style{
     color: #223C62;
-    font-family: Tomorrow;
+    font-family: "Raleway", sans-serif;
     font-size: 24px;
     margin-left: 4px;
 
@@ -28,7 +30,6 @@ body {
     margin-top: 2vh;
 
 }
-
 
 .sidebar {
     position: fixed;
@@ -54,8 +55,9 @@ body {
 }
 
 .sidebar header img {
-    height: 60px;
-    width: 65px;
+    height: 40px;
+    width: 45px;
+    margin-top: 20px;
 }
 
 .sidebar input {

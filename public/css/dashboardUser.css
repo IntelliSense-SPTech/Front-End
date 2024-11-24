@@ -202,8 +202,22 @@ h1 {
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+    width: 120px;
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 50px;
+    padding-inline-start: 40px;
+    border: none;
+}
+
+.select-regiao {
+    width: 160px;
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 50px;
+    padding-inline-start: 10px;
+    border: 1px solid #979797;
+    color: #333333;
 }
 
 
@@ -261,33 +275,44 @@ h1 {
 
 .overview {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    /* margin-bottom: 5px; */
 }
 
 .crime-box {
-    width: 382px;
-    height: 150px;
+    width: 30vw;
+    height: 20vh;
     background-color: #FFF;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-left: 24px;
-    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
 .crime-box h2 {
-    font-size: 27px;
+    font-size: 1.1rem;
     margin-bottom: 10px;
+    font-weight: 500;
 }
 
 .number {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     font-family: 'Inter', sans-serif;
+}
+
+.text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
 }
 
 .yellow {
@@ -304,41 +329,56 @@ h1 {
 
 .crime-charts{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
 }
 
 .crime-charts  .chart {
-    width: 1194px;
-    height: 300px;
+    width: 100vw;
+    height: 45vh;
     background-color: #FFF;
-    padding: 15px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-left: 24px;
-    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .line-charts{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
 }
 
 .line-charts .chart{
-    width: 382px;
-    height: 150px;
+    width: 30vw;
+    height: 20vh;
     background-color: #FFF;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-left: 24px;
-    margin-bottom: 24px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chart h2 {
+    margin-bottom: 20px;
 }
 
 .chart h3 {
-    font-size: 27px;
-    margin-bottom: 2px;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 500;
 }
 
 canvas {
@@ -426,4 +466,12 @@ canvas {
     font-family: "Inter", sans-serif;
     font-size: 15px;
     color: #dadada;
+}
+
+
+.main-content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    padding-right: 15px;
 }
