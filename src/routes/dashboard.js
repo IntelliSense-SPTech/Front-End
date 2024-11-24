@@ -31,5 +31,22 @@ router.get("/getUltimaAtualizacao", function (req, res) {
     dashboardController.getUltimaAtualizacao(req, res);
 })
 
+router.post("/getCrimeMaisIncidencias", function (req, res) {
+    dashboardController.getCrimeMaisIncidencias(req, res);
+})
+
+router.post("/getLocalidadeMaisIncidencias", function (req, res) {
+    dashboardController.getLocalidadeMaisIncidencias(req, res);
+})
+
+router.post("/getMesMaisIncidencias", function (req, res) {
+    dashboardController.getMesMaisIncidencias(req, res);
+})
+
+router.post("/getQtdCrimes", function (req, res) {
+    dashboardController.getQtdCrimes(req, res);
+})
+
+
 
 module.exports = router;

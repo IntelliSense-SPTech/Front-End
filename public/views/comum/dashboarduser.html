@@ -25,6 +25,7 @@
     <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../../js/links.js"></script>
+    <script src="../../js/dashboarduser.js"></script>
 
   </head>
   <body>
@@ -82,44 +83,37 @@
           <div class="header-content">
             <h1>
               Painel de Dados sobre Roubos, Furtos e Latrocínios em São Paulo
-            </h1>
-            <div class="dropdown">
-              <button class="dropdown-btn">2024</button>
-              <div class="dropdown-content">
-                <a href="#">2023</a>
-                <a href="#">2022</a>
-                <a href="#">2021</a>
-                <a href="#">2020</a>
-              </div>
-            </div>
+            </h1><p class="ultima-atualizacao" id="ultimaAtualizacao">Ultima atualização - 07/24</p>
+            <select class="dropdown" id="select_ano" onchange="main()">
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+            </select>      
           </div>
         </header>
         
-
-        
-        
-
         </section>
         <section class="line-charts">
           <div class="chart">
-            <h3>Crimes com mais incidentes</h3>
+            <h3>Crime com mais incidencias</h3>
             <br>
             <br>
-            <h3>Roubo</h3>
+            <h3 id="id_crime_mais_incidencias"></h3>
             
           </div>
           <div class="chart">
-            <h3>Região com mais crimes</h3>
+            <h3>Região com mais incidencias</h3>
             <br>
             <br>
-            <h3>Capital</h3>
+            <h3 id="id_regiao_mais_incidencias"></h3>
             
           </div>
           <div class="chart">
             <h3>Mês com mais incidentes</h3>
             <br>
             <br>
-            <h3>Julho</h3>
+            <h3 id="id_mes_mais_incidencias"></h3>
             
           </div>
         </section>
@@ -127,15 +121,15 @@
         <section class="overview">
           <div class="crime-box total-crimes-gsp">
             <h2>Total de crimes (Grande São Paulo)</h2>
-            <p class="number yellow">289</p>
+            <p class="number" id="id_total_crimes_gsp"></p>
           </div>
           <div class="crime-box total-crimes-capital">
             <h2>Total de crimes (Capital)</h2>
-            <p class="number red">467</p>
+            <p class="number" id="id_total_crimes_capital"></p>
           </div>
           <div class="crime-box total-crimes-litoral">
             <h2>Total de crimes (Litoral)</h2>
-            <p class="number green">916</p>
+            <p class="number" id="id_total_crimes_litoral"></p>
           </div>
         </section>
 
@@ -144,14 +138,11 @@
           <div class="chart">
             
            
-              <div class="dropdown" style="display: inline-block; background-color: #223C62; color: white; border-radius: 20px;">
-                <button class="dropdown-btn" style="background-color: #223C62; color: white; border-radius: 20px;">Selecione</button>
-                <div class="dropdown-content">
-                  <a href="#">Capital</a>
-                  <a href="#">Santos</a>
-                  <a href="#">Grande São Paulo excluindo a capital</a>
-                </div>
-              </div>
+            <select class="dropdown" id="select_localidade" onchange="main()">
+              <option value="Capital">Capital</option>
+              <option value="Grande São Paulo">Grande São Paulo</option>
+              <option value="Litoral">Litoral</option>
+            </select> 
           
             <canvas id="gspChart" style="width: 100%; height: auto;"></canvas>
           </div>
@@ -162,12 +153,9 @@
       </main>
 
 
-      
+<!-- ALERTAS -->
 
-    
-
-
-<div class="notification success">
+<!-- <div class="notification success">
     <i class="icon fa-solid fa-circle-check fa-2x"> </i>
     <button class="close-btn" onclick="this.parentElement.style.display='none';"></button>
     <p><strong>Redução da criminalidade</strong></p>
@@ -187,7 +175,7 @@
     <strong>Cuidado!</strong> 
     <i class="icon fa-solid fa-triangle-exclamation fa-2x"></i>
 
-</div>
+</div> -->
 
     
     
@@ -198,25 +186,25 @@
   
 
     <script>
-      // Gráfico de barras horizontal: Grande São Paulo
+      // Gráfico de barras horizontal
       var gspCtx = document.getElementById("gspChart").getContext("2d");
-      new Chart(gspCtx, {
+      let barraHorizontalTotal = new Chart(gspCtx, {
         type: "bar", // ou "horizontalBar" se estiver usando versões mais antigas
         data: {
-          labels: ["Furto", "Roubo", "Latrocínio"],
+          labels: ["Roubo", "Furto", "Latrocínio"],
           datasets: [
             {
-              label: "Comparação dos crimes",
-              data: [120, 150, 19], // Dados simulados
-              backgroundColor: ["#F4D35E", "#E63946", "#2A9D8F"],
+              label: 'Incidencias',
+              data: [], 
+              backgroundColor: ["#1483CD"],
             },
           ],
         },
         options: {
-          responsive: true, // Faz o gráfico ser responsivo
-          indexAxis: 'y', // Define a orientação como horizontal
+          responsive: true, 
+          indexAxis: 'y', 
           scales: {
-            x: { beginAtZero: true }, // Eixo X para o valor
+            x: { beginAtZero: true },
             y: {
               beginAtZero: true,
             },
