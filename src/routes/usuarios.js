@@ -19,4 +19,8 @@ router.post("/autenticarToken", function (req, res) {
     usuarioController.autenticarToken(req, res);
 });
 
+router.post("/mandarMensagem", function (req, res) {
+    usuarioController.mandarMensagem(req, res);
+});
+
 module.exports = router;

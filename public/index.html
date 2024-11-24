@@ -223,23 +223,23 @@
                         <div class="parte_a_contato">
                             <div class="secao_input nome_input">
                                 <span class="titulo_input">Nome Completo</span>
-                                <input class="input input_nome" name="nome" type="text" placeholder="Insira seu nome aqui" required>
+                                <input class="input input_nome" id="input_nome" name="nome" type="text" placeholder="Insira seu nome aqui" required>
                             </div>
                             <div class="secao_input telefone_input">
                                 <span class="titulo_input">Telefone</span>
-                                <input class="input input_telefone" name="telefone" type="text" placeholder="Insira seu telefone aqui">
+                                <input class="input input_telefone" id="input_telefone" name="telefone" type="text" placeholder="Insira seu telefone aqui">
                             </div>
                         </div>
                         <div class="secao_input">
                             <span class="titulo_input">Email</span>
-                            <input class="input input_email" name="email" type="email" placeholder="Insira seu email aqui" required>
+                            <input class="input input_email" id="input_email" name="email" type="email" placeholder="Insira seu email aqui" required>
                         </div>
                         <div class="secao_input">
                             <span class="titulo_input">Mensagem</span>
-                            <textarea class="input input_mensagem" name="mensagem" placeholder="Digite sua mensagem aqui" required></textarea>
+                            <textarea class="input input_mensagem" id="input_mensagem" name="mensagem" placeholder="Digite sua mensagem aqui" required></textarea>
                         </div>
                     </div>
-                    <button class="btn_contato" type="button">Enviar</button>
+                    <button onclick="enviarMensagem()" class="btn_contato" type="button">Enviar</button>
                 </div>
                 
             </div>
@@ -390,5 +390,38 @@
         content.classList.remove('blurred-background');
 
     }
+
+    function enviarMensagem () {
+        let nomeVar = document.getElementById("input_nome").value;
+        const emailVar = document.getElementById("input_email").value;
+        let telefoneVar = document.getElementById("input_telefone").value;
+        let mensagemVar = document.getElementById("input_mensagem").value;
+
+  fetch("/usuarios/mandarMensagem", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        telefoneServer: telefoneVar,
+        mensagemServer: mensagemVar
+    }),
+})
+    .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          alert('Mensagem enviada!');
+        } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+    })
+    .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+
+}
 
 </script>
