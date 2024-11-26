@@ -79,7 +79,13 @@ function cadastrar() {
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                alert("Usuário cadastrado com sucesso");
+                const mensagemModal = document.getElementById("modal-message");
+                mensagemModal.textContent = "Cadastrado com sucesso!";
+                document.getElementById("modal").style.display = "block";
+
+                setTimeout(() => {
+                    document.getElementById("modal").style.display = "block";
+                  }, "2000");
             } else {
                 const mensagemModal = document.getElementById("modal-message");
                 mensagemModal.textContent = "Erro ao tentar realizar o cadastro. Tente novamente.";
