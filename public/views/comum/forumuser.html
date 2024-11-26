@@ -1,107 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Relatos e Avaliações</title>
-    <link rel="stylesheet" href="../../css/forum.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="../../assets/5.png">
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/akar-icons-fonts"></script>
-    <script
-      src="https://kit.fontawesome.com/65879fa723.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../../js/forum.js"></script>
-    <script src="../../js/links.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <aside class="sidebar">
-        <header>
-          <img src="../../assets/5 5.png" alt="Logo" />
-        </header>
-        <ul>
-          <li>
-            <div class="nome-div">
-              <p class="nome-usuario-style">Olá, <p class="nome-usuario-style" id="nome-usuario">undefined</p></p>
-            </div>
-            <input type="radio" id="dashboard" name="sidebar" />
-            <label for="dashboard" onclick="irParaDashboard()">
-              <i class="fa-solid fa-chart-simple"></i>
-              <p>Dashboard</p>
-            </label>
-          </li>
-         
-          <li>
-            <input type="radio" id="forum" name="sidebar" />
-            <label for="forum" onclick="irParaForum()">
-              <i class="fa-solid fa-comments"></i>
-              <p onclick="irParaForum()">Forum</p>
-            </label>
-          </li>
-          <li>
-            <input type="radio" id="perfil" name="sidebar" />
-            <label for="perfil" onclick="irParaPerfil()">
-              <i class="fa-solid fa-user"></i>
-              <p>Perfil</p>
-            </label>
-          </li>
-         
-          <li>
-            <input type="radio" id="noticias" name="sidebar" />
-            <label for="conta" onclick="irParaNoticias()">
-              <i class="fa-regular fa-newspaper"></i>
-              <p>Noticias</p>
-            </label>
-          </li>
-          
-          <li>
-            <input type="radio" id="conta" name="sidebar" />
-            <label for="conta" onclick="irParaHome()">
-              <i class="fa-solid fa-person-through-window"></i>
-              <p>Sair</p>
-            </label>
-          </li>
-        </ul>
-      </aside>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fórum</title>
+  <link rel="stylesheet" href="../../css/forum.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="../../assets/5.png">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/akar-icons-fonts"></script>
+  <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
+  <script src="../../js/forum.js"></script>
+  <script src="../../js/links.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <header>
+        <img src="../../assets/5 5.png" alt="Logo" />
+      </header>
+      <ul>
+        <li>
+          <div class="nome-div">
+            <p class="nome-usuario-style">Olá,</p>
+            <p class="nome-usuario-style" id="nome-usuario">undefined</p>
+          </div>
+          <input type="radio" id="dashboard" name="sidebar" />
+          <label for="dashboard" onclick="irParaDashboard()">
+            <i class="fa-solid fa-chart-simple"></i>
+            <p>Dashboard</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="projecao" name="sidebar" />
+          <label for="projecao" onclick="irParaProjecao()">
+            <i class="fa-solid fa-user"></i>
+            <p>Projeção</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="notificacoes" name="sidebar" />
+          <label for="notificacoes" onclick="irParaPlanoAcao()">
+            <i class="fa-solid fa-bell"></i>
+            <p>Plano de ação</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="forum" name="sidebar" />
+          <label for="forum" onclick="irParaForum()">
+            <i class="fa-solid fa-comments"></i>
+            <p onclick="irParaForum()">Fórum</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="perfil" name="sidebar" />
+          <label for="perfil" onclick="irParaPerfil()">
+            <i class="fa-solid fa-user"></i>
+            <p>Perfil</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="conta" name="sidebar" />
+          <label for="conta" onclick="irParaHome()">
+            <i class="fa-solid fa-person-through-window"></i>
+            <p>Sair</p>
+          </label>
+        </li>
+      </ul>
+    </aside>
+    <div class="container-relatos">
       <div class="relatos">
         <h2>Relatos</h2>
-        <button onclick="listar()"  class="enviar-btn">Recarregar</button>
+        <button onclick="listar()" class="enviar-btn">Recarregar</button>
         <div id="div_relatos"></div>
 
-        
+
         <button id="escreverRelatoBtn" class="enviar-btn">
           Escrever relato
         </button>
 
-       
+
         <div id="meuModal" class="modal">
           <div class="modal-conteudo">
             <span class="fechar">&times;</span>
             <h2>Escreva seu relato</h2>
-            
+
             <div class="input-container">
-              <input
-                type="text"
-                placeholder=" "
-                id="input_descricao"
-                class="input_relato"
-                required
-              />
+              <input type="text" placeholder=" " id="input_descricao" class="input_relato" required />
               <label class="label" for="input_descricao">Descreva seu relato</label>
               <div class="underline"></div>
             </div>
@@ -111,74 +102,10 @@
           </div>
         </div>
       </div>
-
-      <div class="avaliacoes">
-        <h2>Avaliações</h2>
-        <div class="avaliacao-card">
-          <div class="avaliacao-header">
-            <p><strong>usuário123</strong></p>
-            <div class="rating">
-              <input value="5" name="rate" id="star5" type="radio" />
-              <label title="text" for="star5"></label>
-              <input value="4" name="rate" id="star4" type="radio" />
-              <label title="text" for="star4"></label>
-              <input value="3" name="rate" id="star3" type="radio" checked="" />
-              <label title="text" for="star3"></label>
-              <input value="2" name="rate" id="star2" type="radio" />
-              <label title="text" for="star2"></label>
-              <input value="1" name="rate" id="star1" type="radio" />
-              <label title="text" for="star1"></label>
-            </div>
-          </div>
-          <div class="avaliacao-text">
-            <p>É necessário mais detalhes sobre segurança.</p>
-          </div>
-        </div>
-        <div class="avaliacao-card">
-          <div class="avaliacao-header">
-            <p><strong>joaosilva77</strong></p>
-            <div class="rating">
-              <input value="5" name="rate" id="star5" type="radio" />
-              <label title="text" for="star5"></label>
-              <input value="4" name="rate" id="star4" type="radio" />
-              <label title="text" for="star4"></label>
-              <input value="3" name="rate" id="star3" type="radio" checked="" />
-              <label title="text" for="star3"></label>
-              <input value="2" name="rate" id="star2" type="radio" />
-              <label title="text" for="star2"></label>
-              <input value="1" name="rate" id="star1" type="radio" />
-              <label title="text" for="star1"></label>
-            </div>
-          </div>
-          <div class="avaliacao-text">
-            <p>Muito bom!!!</p>
-          </div>
-        </div>
-
-        <div class="avaliacao-card">
-          <div class="avaliacao-header">
-            <p><strong>CapitãoPiratas</strong></p>
-            <div class="rating">
-              <input value="5" name="rate" id="star5" type="radio" />
-              <label title="text" for="star5"></label>
-              <input value="4" name="rate" id="star4" type="radio" />
-              <label title="text" for="star4"></label>
-              <input value="3" name="rate" id="star3" type="radio" checked="" />
-              <label title="text" for="star3"></label>
-              <input value="2" name="rate" id="star2" type="radio" />
-              <label title="text" for="star2"></label>
-              <input value="1" name="rate" id="star1" type="radio" />
-              <label title="text" for="star1"></label>
-            </div>
-          </div>
-          <div class="avaliacao-text">
-            <p>Local ruim, as opções deveriam ser melhores.</p>
-          </div>
-        </div>
-        <button class="enviar-btn">Enviar avaliação</button>
-      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
 
 <script>

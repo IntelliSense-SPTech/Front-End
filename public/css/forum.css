@@ -26,9 +26,8 @@ body {
     width: 100%;
     align-items: flex-start;
     flex-direction: row;
-    margin-bottom: 2vh;
-    margin-top: 2vh;
-
+    margin-bottom: 18px;
+    margin-top: 18px;
 }
 
 .sidebar {
@@ -169,17 +168,23 @@ body {
 .container {
     display: flex;
     flex-direction: row;
-    margin-left: 280px; 
+    margin-left: 270px;
     gap: 20px;
     padding: 20px;
     width: calc(100% - 280px);
+}
+
+.container-relatos{
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 .relatos  {
     background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
-    width: 78%;
+    width: 95%;
     height: 650px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
