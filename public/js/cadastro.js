@@ -80,6 +80,7 @@ function cadastrar() {
 
             if (resposta.ok) {
                 alert("Usuário cadastrado com sucesso");
+                irParaLogin();
             } else {
                 const mensagemModal = document.getElementById("modal-message");
                 mensagemModal.textContent = "Erro ao tentar realizar o cadastro. Tente novamente.";
