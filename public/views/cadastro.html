@@ -52,9 +52,15 @@
 </html>
 
 <script>
+    const modalStyle = document.getElementById("modal");
+    
     document.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
-            validarInputs();
+            if (modalStyle.style.display === "block") {
+                fecharModal();
+            } else {
+                validarInputs();
+            }
         }
     });
 </script>
