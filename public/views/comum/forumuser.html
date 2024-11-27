@@ -28,8 +28,7 @@
       <ul>
         <li>
           <div class="nome-div">
-            <p class="nome-usuario-style">Olá,</p>
-            <p class="nome-usuario-style" id="nome-usuario">undefined</p>
+            <p class="nome-usuario-style">Olá, <p class="nome-usuario-style" id="nome-usuario">undefined</p></p>
           </div>
           <input type="radio" id="dashboard" name="sidebar" />
           <label for="dashboard" onclick="irParaDashboard()">
@@ -37,25 +36,12 @@
             <p>Dashboard</p>
           </label>
         </li>
-        <li>
-          <input type="radio" id="projecao" name="sidebar" />
-          <label for="projecao" onclick="irParaProjecao()">
-            <i class="fa-solid fa-user"></i>
-            <p>Projeção</p>
-          </label>
-        </li>
-        <li>
-          <input type="radio" id="notificacoes" name="sidebar" />
-          <label for="notificacoes" onclick="irParaPlanoAcao()">
-            <i class="fa-solid fa-bell"></i>
-            <p>Plano de ação</p>
-          </label>
-        </li>
+        
         <li>
           <input type="radio" id="forum" name="sidebar" />
           <label for="forum" onclick="irParaForum()">
             <i class="fa-solid fa-comments"></i>
-            <p onclick="irParaForum()">Fórum</p>
+            <p onclick="irParaForumUser()">Fórum</p>
           </label>
         </li>
         <li>
@@ -66,12 +52,20 @@
           </label>
         </li>
         <li>
+          <input type="radio" id="noticias" name="sidebar" />
+          <label for="conta" onclick="irParaNoticias()">
+            <i class="fa-regular fa-newspaper"></i>
+            <p>Noticias</p>
+          </label>
+        </li>
+        <li>
           <input type="radio" id="conta" name="sidebar" />
           <label for="conta" onclick="irParaHome()">
             <i class="fa-solid fa-person-through-window"></i>
             <p>Sair</p>
           </label>
         </li>
+        
       </ul>
     </aside>
     <div class="container-relatos">

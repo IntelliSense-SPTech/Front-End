@@ -82,11 +82,21 @@ function entrar() {
             sessionStorage.EMAIL = data.email;
             sessionStorage.TIPO_USUARIO = data.tipo_usuario
 
-            if (data.tipo_usuario == 'comum') {
-                irParaDashboardComum()
-            } else {
-                irParaAutenticacao()
-            }
+            const mensagemModal = document.getElementById("modal-message");
+                mensagemModal.textContent = "Login realizado com sucesso!";
+                const modal = document.getElementById("modal");
+                modal.style.display = "block";
+            
+                setTimeout(() => {
+                    modal.style.display = "none"; 
+                    if (data.tipo_usuario == 'comum') {
+                        irParaDashboardComum()
+                    } else {
+                        irParaAutenticacao()
+                    }
+                }, 1000);    
+
+          
             
         })
         .catch(error => {
