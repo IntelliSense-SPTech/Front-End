@@ -200,6 +200,7 @@ body {
         border-radius: 10px;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
 
     .div2, .div3, .div4, .div6, .div7, .div8{
@@ -221,7 +222,7 @@ body {
 
 
     .div1 {
-        margin-top: 50px;
+        margin-top: 60px;
     }
 
     .div1 { grid-area: 1 / 2 / 2 / 5; background-color: #FFFFFF; }
@@ -233,4 +234,23 @@ body {
     .div7 { grid-area: 7 / 3 / 8 / 4; background-color: #FFFFFF; }
     .div8 { grid-area: 7 / 4 / 8 / 5; background-color: #FFFFFF; }
     
+    h2 {
+        font-family: "Inter", sans-serif;
+        font-size: 40px;
+        font-weight: 500;
+    }
+    
+    .select-regiao {
+        width: 160px;
+        margin-bottom: 10px;
+        height: 30px;
+        border-radius: 50px;
+        padding-inline-start: 10px;
+        border: 1px solid #979797;
+        color: #333333;
+        position: fixed;
+        right: 10vw;
+        top: 15px;
+    }
+
     

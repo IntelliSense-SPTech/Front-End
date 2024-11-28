@@ -216,7 +216,7 @@ function getUltimaAtualizacao() {
                 mes = resposta[0].ultimoMes
                 ano = resposta[0].ultimoAno
 
-                ultimaAtualizacao.value = 'Ultima atualização - ${mes}/${ano}'
+                ultimaAtualizacao.innerHTML = `Última atualização - 0${mes}/${ano}`
             });
         }
     })

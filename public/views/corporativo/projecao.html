@@ -25,6 +25,7 @@
     <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../../js/links.js"></script>
+    <script src="../../js/projecao.js"></script>
 
   </head>
   <body>
@@ -83,26 +84,44 @@
       </aside>
 
 
-      <div class="parent">
+      <div>
+        <select class="select-regiao" id="selecionar_regiao" onchange="main()">
+          <option value="Capital">Capital</option>
+          <option value="Grande São Paulo">Grande São Paulo</option>
+          <option value="Litoral">Litoral</option>
+        </select>
+      </div>
+      <div class="parent">     
+        
+        
         <div class="div1"> 
-
+          
+          <h1>
+              Numero de casos em relação ao ultimo mês
+          </h1>
+          
+      
+      </div>
+        <div class="div1"> 
+          
             <h1>
                 Numero de casos em relação ao ultimo mês
             </h1>
+            
         
         </div>
 
         <div class="div2"> 
-            <p>Latrocinio <i class='bx bx-chevrons-up' style="color: red;"></i> </p> 
-            <h1>24%</h1>
+            <p id="cor_latrocinio">Latrocinio</p> 
+            <h2 id="porcentagem_latrocinio"></h2>
         </div>
         <div class="div3"> 
-            <p>Roubo <i class='bx bx-chevrons-up' style="color: red;"></i> </p> 
-            <h1>12%</h1>
+            <p id="cor_roubo">Roubo</p> 
+            <h2 id="porcentagem_roubo"></h2>
         </div>
         <div class="div4"> 
-            <p>Furto <i class='bx bx-chevrons-down' style="color: #2CD17D;"></i> </p> 
-            <h1>28%</h1>
+            <p id="cor_furto">Furto</p> 
+            <h2 id="porcentagem_furto"></h2>
         </div>
 
         <div class="div5"> 
@@ -115,15 +134,15 @@
 
         <div class="div6"> 
             <p >Latrocinio <i class='bx bx-chevrons-up' style="color: red;"></i> </p> 
-            <h1>24%</h1>
+            <h2 id="projecao_latrocinio">24%</h2>
         </div>
         <div class="div7"> 
             <p>Roubo <i class='bx bx-chevrons-up' style="color: red;"></i> </p> 
-            <h1>12%</h1>
+            <h2 id="projecao_roubo">12%</h2>
         </div>
         <div class="div8"> 
             <p>Furto <i class='bx bx-chevrons-down' style="color: #2CD17D;"></i> </p> 
-            <h1>28%</h1>
+            <h2 id="projecao_furto">28%</h2>
         </div>
         </div>
 

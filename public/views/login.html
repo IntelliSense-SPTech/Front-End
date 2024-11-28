@@ -49,17 +49,3 @@
 </body>
 
 </html>
-
-<script>
-    const modalStyle = document.getElementById("modal");
-    
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
-            if (modalStyle.style.display === "block") {
-                fecharModal();
-            } else {
-                validarInputs();
-            }
-        }
-    });
-</script>

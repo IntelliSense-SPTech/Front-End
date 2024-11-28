@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
 function main() {
     const anoSelecionado = select_ano.value
 
+    getUltimaAtualizacao()
     getTotalCrimes(anoSelecionado)
     getCrimeMaisIncidencias(anoSelecionado)
     getLocalidadeMaisIncidencias(anoSelecionado)
     getMesMaisIncidencias(anoSelecionado)
     getQtdCrimes(anoSelecionado)
+    
 }
 
 function getTotalCrimes(anoSelecionado) {
@@ -33,7 +35,6 @@ function getTotalCrimes(anoSelecionado) {
             });
         }
     })
-
 }
 
 function getCrimeMaisIncidencias(anoSelecionado) {
@@ -126,3 +127,20 @@ function getQtdCrimes(anoSelecionado) {
         }
     })
 }
+
+function getUltimaAtualizacao() {
+    fetch("/dashboard/getUltimaAtualizacao", {
+      method: "GET",
+    }).then(function (resposta) {
+
+        if (resposta.ok) {
+            
+            resposta.json().then(function (resposta) {
+                mes = resposta[0].ultimoMes
+                ano = resposta[0].ultimoAno
+
+                ultimaAtualizacaoUser.innerHTML = `Última atualização - 0${mes}/${ano}`
+            });
+        }
+    })
+  }

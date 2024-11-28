@@ -23,12 +23,13 @@
              <p class="texto-token">Insira o seu token de segurança</p>
             <div class="corpo-inputs">
                 
-                <input type="text" class="inputs" id="caractere_1">
-                <input type="text" class="inputs" id="caractere_2">
-                <input type="text" class="inputs" id="caractere_3">
-                <input type="text" class="inputs" id="caractere_4">               
-                <input type="text" class="inputs" id="caractere_5">
-                <input type="text" class="inputs" id="caractere_6">
+                <input type="text" class="inputs" id="caractere_1" maxlength="1" onkeyup="PressEnter('caractere_2');">
+                <input type="text" class="inputs" id="caractere_2" maxlength="1" onkeyup="PressEnter('caractere_3');">
+                <input type="text" class="inputs" id="caractere_3" maxlength="1" onkeyup="PressEnter('caractere_4');">
+                <input type="text" class="inputs" id="caractere_4" maxlength="1" onkeyup="PressEnter('caractere_5');">
+                <input type="text" class="inputs" id="caractere_5" maxlength="1" onkeyup="PressEnter('caractere_6');">
+                <input type="text" class="inputs" id="caractere_6" maxlength="1">
+
 
                 
             </div>
@@ -41,3 +42,12 @@
 </body>
 
 </html>
+<script>
+    function PressEnter(nextinputId){
+  
+        document.getElementById(nextinputId).focus();     
+        return false;     
+        
+    
+}
+</script>

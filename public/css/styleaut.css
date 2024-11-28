@@ -63,6 +63,7 @@ body {
     gap: 2vw;
     justify-content: center;
     align-items: center;
+   
     
 }
 
@@ -78,6 +79,9 @@ body {
     border-radius: 10px;
     margin-bottom: 5vh;
     margin-top: 5vh;
+    display: flex;
+    text-align: center;
+    text-transform: uppercase;
 }
 .texto-token{
     font-size: 30px;
