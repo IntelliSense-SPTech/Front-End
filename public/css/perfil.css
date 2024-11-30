@@ -229,6 +229,10 @@ body {
     font-size: 1em;
     margin-bottom: 15px;
 }
+.upload-button:hover{
+    background-color: #114aa0;
+    cursor: pointer;
+}
 
 .upload-info {
     font-size: 0.9em;
@@ -271,6 +275,7 @@ form {
 label {
     font-size: 0.9em;
     color: #666;
+    margin-bottom: 5px;
  
 }
 
@@ -297,4 +302,8 @@ input[type="email"], input[type="password"], select {
     cursor: pointer;
     font-size: 1em;
     margin-top: 20px;
+}
+.save-button:hover{
+    background-color: #114aa0;
+    cursor: pointer;
 }
