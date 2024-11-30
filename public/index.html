@@ -217,31 +217,37 @@
                         <p>Rua Haddock Lobo, 595 - Cerqueira César <br> São Paulo - SP (Próximo ao metrô Consolação)</p>
                     </div>
                 </div>
-                <div class="contato_direito">
-                    <h3>Fale Conosco</h3>
+                <div class="contato_direito" id="id_form">
+                    <h3>Fale Conosco</h3><span id="resposta_form"></span>
                     <div class="inputs">
                         <div class="parte_a_contato">
                             <div class="secao_input nome_input">
                                 <span class="titulo_input">Nome Completo</span>
-                                <input class="input input_nome" id="input_nome" name="nome" type="text" placeholder="Insira seu nome aqui" required>
+                                
+                                <input class="input input_nome" id="input_nome" name="nome" type="text"
+                                    placeholder="Insira seu nome aqui" required>
                             </div>
                             <div class="secao_input telefone_input">
                                 <span class="titulo_input">Telefone</span>
-                                <input class="input input_telefone" id="input_telefone" name="telefone" type="text" placeholder="Insira seu telefone aqui">
+                                <input class="input input_telefone" id="input_telefone" name="telefone" type="text"
+                                    placeholder="Insira seu telefone aqui">
                             </div>
                         </div>
                         <div class="secao_input">
                             <span class="titulo_input">Email</span>
-                            <input class="input input_email" id="input_email" name="email" type="email" placeholder="Insira seu email aqui" required>
+                            <input class="input input_email" id="input_email" name="email" type="email"
+                                placeholder="Insira seu email aqui" required>
                         </div>
                         <div class="secao_input">
                             <span class="titulo_input">Mensagem</span>
-                            <textarea class="input input_mensagem" id="input_mensagem" name="mensagem" placeholder="Digite sua mensagem aqui" required></textarea>
+                            <textarea class="input input_mensagem" id="input_mensagem" name="mensagem"
+                                placeholder="Digite sua mensagem aqui" required></textarea>
                         </div>
                     </div>
                     <button onclick="enviarMensagem()" class="btn_contato" type="button">Enviar</button>
                 </div>
-                
+
+
             </div>
             <div class="implementar">
                 <a href="views/formulario-imp.html">Implementar nossa solução</a> <span>+</span>
@@ -391,37 +397,50 @@
 
     }
 
-    function enviarMensagem () {
+    function enviarMensagem() {
         let nomeVar = document.getElementById("input_nome").value;
         const emailVar = document.getElementById("input_email").value;
         let telefoneVar = document.getElementById("input_telefone").value;
         let mensagemVar = document.getElementById("input_mensagem").value;
 
-  fetch("/usuarios/mandarMensagem", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        telefoneServer: telefoneVar,
-        mensagemServer: mensagemVar
-    }),
-})
-    .then(function (resposta) {
-        console.log("resposta: ", resposta);
+        fetch("/usuarios/mandarMensagem", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                telefoneServer: telefoneVar,
+                mensagemServer: mensagemVar
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
 
-        if (resposta.ok) {
-          alert('Mensagem enviada!');
-        } else {
-            throw "Houve um erro ao tentar realizar o cadastro!";
-        }
-    })
-    .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-    });
+                if (resposta.ok) {
+                     id_form.innerHTML = `<h1 style="color: #007bff; font-size: 44px; font-weight: 600;">Mensagem enviada com sucesso!</h1><img src="assets/verificado.png" alt="" style="width: 40%; margin-bottom: 10vh; margin-top: 4vh"> <button class="btn_contato" onclick="location.reload()"> Voltar</button>`
+                } else {
+                    throw resposta_form.innerHTML = "Preencha todos os campos"
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
 
-}
+    }
+    // function enviarMensagem() {
+    //     let nome = input_nome.value;
+    //     let telefone = input_telefone.value;
+    //     let email = input_email.value;
+    //     let mensagem = input_mensagem.value;
+
+    //     if (nome == "" || telefone == "" || email == "" || mensagem == "") {
+    //         resposta_form.innerHTML = "Preencha todos os campos"
+    //     } else {
+
+          
+    //     }
+    // }
 
 </script>
