@@ -221,4 +221,31 @@ function getUltimaAtualizacao() {
         }
     })
   }
+  function carregarNotificacoes(ano) {
+      fetch("/dashboard/notificacoes", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ anoServer: ano })
+      })
+      .then((response) => response.json())
+      .then((dados) => {
+          // Atualize a interface com os dados recebidos
+          exibirNotificacoes(dados);
+      })
+      .catch((erro) => console.error("Erro ao carregar notificações:", erro));
+  }
+
+  function exibirNotificacoes(dados) {
+      const notificacoesContainer = document.getElementById("notificacoes");
+
+      notificacoesContainer.innerHTML = `
+          <p>Última atualização: ${dados.ultimaAtualizacao[0].ultimoMes}/${dados.ultimaAtualizacao[0].ultimoAno}</p>
+          <p>Crime mais incidente: ${dados.crimeMaisIncidencias[0].especificacao} com ${dados.crimeMaisIncidencias[0].qtdCrimes} casos</p>
+          <p>Localidade com mais ocorrências: ${dados.localidadeMaisIncidencias[0].localidade} com ${dados.localidadeMaisIncidencias[0].total_crimes} casos</p>;
+
+  }
+
+
 

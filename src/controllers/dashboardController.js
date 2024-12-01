@@ -209,6 +209,26 @@ function getQtdCrimes(req, res) {
             }
         );
 }
+function getNotificacaoCrimes(req, res) {
+    let ano = req.body.anoServer;
+
+    Promise.all([
+        dashboardModel.getMaiorAumento(ano),
+        dashboardModel.getMaiorReducao(ano)
+    ])
+        .then(([aumento, reducao]) => {
+            const notificacao = {
+                maiorAumento: aumento[0],
+                maiorReducao: reducao[0]
+            };
+            res.json(notificacao);
+        })
+        .catch((erro) => {
+            console.error("Erro ao obter notificações:", erro);
+            res.status(500).json("Erro ao processar os dados.");
+        });
+}
+
 
 module.exports = {
     getTotalCrimes,
@@ -221,6 +241,7 @@ module.exports = {
     getCrimeMaisIncidencias,
     getLocalidadeMaisIncidencias,
     getMesMaisIncidencias,
-    getQtdCrimes
+    getQtdCrimes,
+    getNotificacaoCrimes
 }
 

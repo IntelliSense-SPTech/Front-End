@@ -46,6 +46,9 @@ router.post("/getMesMaisIncidencias", function (req, res) {
 router.post("/getQtdCrimes", function (req, res) {
     dashboardController.getQtdCrimes(req, res);
 })
+router.post("/getNotificacaoCrimes", function (req, res) {
+      dashboardController.getNotificacaoCrimes(req, res);
+  });
 
 
 
