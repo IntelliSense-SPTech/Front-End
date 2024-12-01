@@ -2,128 +2,132 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noticias</title>
-    <link rel="stylesheet" href="../../css/noticias.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notícias</title>
+  <link rel="stylesheet" href="../../css/noticias.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <script src="https://unpkg.com/akar-icons-fonts"></script>
-    <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../../js/links.js"></script>
-    <link rel="icon" href="../../assets/5.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/akar-icons-fonts"></script>
+  <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../../js/links.js"></script>
+  <link rel="icon" href="../../assets/5.png">
 </head>
 
 <body>
+  <div class="container">
+    <aside class="sidebar">
+      <header>
+        <img src="../../assets/5 5.png" alt="Logo" />
+      </header>
+      <ul>
+        <li>
+          <div class="nome-div">
+            <p class="nome-usuario-style">Olá,
+            <p class="nome-usuario-style" id="nome-usuario">undefined</p>
+            </p>
+          </div>
+          <input type="radio" id="dashboard" name="sidebar" />
+          <label for="dashboard" onclick="irParaDashboard()">
+            <i class="fa-solid fa-chart-simple"></i>
+            <p>Dashboard</p>
+          </label>
+        </li>
+
+        <li>
+          <input type="radio" id="forum" name="sidebar" />
+          <label for="forum" onclick="irParaForum()">
+            <i class="fa-solid fa-comments"></i>
+            <p onclick="irParaForumUser()">Fórum</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="perfil" name="sidebar" />
+          <label for="perfil" onclick="irParaPerfil()">
+            <i class="fa-solid fa-user"></i>
+            <p>Perfil</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="noticias" name="sidebar" />
+          <label for="conta" onclick="irParaNoticias()">
+            <i class="fa-regular fa-newspaper"></i>
+            <p>Notícias</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="conta" name="sidebar" />
+          <label for="conta" onclick="irParaHome()">
+            <i class="fa-solid fa-person-through-window"></i>
+            <p>Sair</p>
+          </label>
+        </li>
+
+      </ul>
+    </aside>
+
     <div class="container">
-      <aside class="sidebar">
-        <header>
-          <img src="../../assets/5 5.png" alt="Logo" />
-        </header>
-        <ul>
-          <li>
-            <div class="nome-div">
-              <p class="nome-usuario-style">Olá, <p class="nome-usuario-style" id="nome-usuario">undefined</p></p>
-            </div>
-            <input type="radio" id="dashboard" name="sidebar" />
-            <label for="dashboard" onclick="irParaDashboard()">
-              <i class="fa-solid fa-chart-simple"></i>
-              <p>Dashboard</p>
-            </label>
-          </li>
-          
-          <li>
-            <input type="radio" id="forum" name="sidebar" />
-            <label for="forum" onclick="irParaForum()">
-              <i class="fa-solid fa-comments"></i>
-              <p onclick="irParaForumUser()">Fórum</p>
-            </label>
-          </li>
-          <li>
-            <input type="radio" id="perfil" name="sidebar" />
-            <label for="perfil" onclick="irParaPerfil()">
-              <i class="fa-solid fa-user"></i>
-              <p>Perfil</p>
-            </label>
-          </li>
-          <li>
-            <input type="radio" id="noticias" name="sidebar" />
-            <label for="conta" onclick="irParaNoticias()">
-              <i class="fa-regular fa-newspaper"></i>
-              <p>Noticias</p>
-            </label>
-          </li>
-          <li>
-            <input type="radio" id="conta" name="sidebar" />
-            <label for="conta" onclick="irParaHome()">
-              <i class="fa-solid fa-person-through-window"></i>
-              <p>Sair</p>
-            </label>
-          </li>
-          
-        </ul>
-      </aside>
+      <div class="corpo-postagens">
+        <div class="ultimasPostagens">
+          <div id="titulo_postagens"><span id="ultimas"> Notícias</span> </div>
+          <div id="primeiraPostagem">
 
-        <div class="container">
-         <div class="corpo-postagens">
-          <div class="ultimasPostagens">
-            <div id="titulo_postagens"><span id="ultimas"> Notícias</span> </div>
-            <div id="primeiraPostagem">
-              
-              <img src="../../assets/1post.png" alt="">
-              <div>
-                <div>Estado de SP registra 181 roubos ou furtos de carro por dia; veja quais modelos são alvos dos criminosos
-                </div><br>
-                <div id="texto_primeiraPostagem">"Os modelos mais visados foram principalmente carros populares e de ampla circulação, mas chama a atenção alguns utilitários e SUVs na lista, como o Jeep/Renegade. Os criminosos estão diversificando suas preferências", analisou Vitor Corrêa, coordenador do Comando de Operações do Grupo Tracker.</div>
-                <a href="https://g1.globo.com/sp/sao-paulo/noticia/2024/07/02/estado-de-sp-registra-181-roubos-ou-furtos-de-carro-por-dia-veja-quais-modelos-sao-alvos-dos-criminosos.ghtml"
-                  target="_blank" class="vermais">Ver mais... </a>
-              </div>
-            </div>
-            <div id="segundaPostagem">
-              <img src="../../assets/2post.png" alt="">
-              <div>
-                <div>Zona Leste de SP é a região que mais registrou roubos na cidade no 1° semestre de 2024, diz levantamento</div><br>
-                <div id="texto_segundaPostagem">De acordo com levantamento feito pelo Bom Dia SP, foram 15.846 casos registrados na região de janeiro a junho deste ano. Em média, pelo menos 87 roubos foram registrados por dia na região. Média de três roubos por hora.</div>
-                <a href="https://g1.globo.com/sp/sao-paulo/noticia/2024/08/26/zona-leste-de-sp-e-a-regiao-que-mais-registrou-roubos-na-cidade-no-1-semestre-de-2024-diz-levantamento.ghtml"
-                  target="_blank" class="vermais">Ver mais...</a>
-              </div>
-            </div>
-            <div id="terceiraPostagem">
-              <img src="../../assets/3post.png" alt="">
-              <div>
-                <div>15 das 50 cidades brasileiras com maior taxa de furtos e roubos de celulares ficam em SP</div><br>
-                <div id="texto_terceiraPostagem">A cada 1 minuto e 42 segundos, um celular foi furtado ou roubado no estado de São Paulo em 2023. É o que apontam os dados apresentados pelo 18º Anuário do Fórum Brasileiro de Segurança Pública, divulgado nesta quinta-feira (18).</div>
-                <a href="https://g1.globo.com/sp/sao-paulo/noticia/2024/07/18/15-das-50-cidades-brasileiras-com-maior-taxa-de-furtos-e-roubos-de-celulares-ficam-em-sp-aponta-anuario-veja-quais.ghtml"
-                  target="_blank " class="vermais">Ver mais...</a>
-              </div>
-            </div>
-            <div id="quartaPostagem">
-              <img src="../../assets/post.png" alt="">
-              <div>
-                <div>Onze pessoas morrem em ataques na madrugada na Grande São Paulo</div><br>
-                <div id="texto_quartaPostagem">
-                  Onze pessoas morreram em ataques criminosos na Grande São Paulo entre a noite desta quinta (8) e na madrugada desta sexta-feira (9). As mortes aconteceram na Zona Sul da capital, em Santana de Parnaíba e em Santo André, no ABC.</div>
-                <a href="https://g1.globo.com/sao-paulo/noticia/2012/11/onze-pessoas-morrem-em-ataques-na-madrugada-na-grande-sao-paulo.html"
-                  target="_blank " class="vermais">Ver mais...</a>
-              </div>
-            </div>
+            <img src="../../assets/1post.png" alt="">
             <div>
-
-      
-       
-
-
-
-
-
-
+              <div>Estado de SP registra 181 roubos ou furtos de carro por dia; veja quais modelos são alvos dos
+                criminosos
+              </div><br>
+              <div id="texto_primeiraPostagem">"Os modelos mais visados foram principalmente carros populares e de ampla
+                circulação, mas chama a atenção alguns utilitários e SUVs na lista, como o Jeep/Renegade. Os criminosos
+                estão diversificando suas preferências", analisou Vitor Corrêa, coordenador do Comando de Operações do
+                Grupo Tracker.</div>
+              <a href="https://g1.globo.com/sp/sao-paulo/noticia/2024/07/02/estado-de-sp-registra-181-roubos-ou-furtos-de-carro-por-dia-veja-quais-modelos-sao-alvos-dos-criminosos.ghtml"
+                target="_blank" class="vermais">Ver mais... </a>
+            </div>
+          </div>
+          <div id="segundaPostagem">
+            <img src="../../assets/2post.png" alt="">
+            <div>
+              <div>Zona Leste de SP é a região que mais registrou roubos na cidade no 1° semestre de 2024, diz
+                levantamento</div><br>
+              <div id="texto_segundaPostagem">De acordo com levantamento feito pelo Bom Dia SP, foram 15.846 casos
+                registrados na região de janeiro a junho deste ano. Em média, pelo menos 87 roubos foram registrados por
+                dia na região. Média de três roubos por hora.</div>
+              <a href="https://g1.globo.com/sp/sao-paulo/noticia/2024/08/26/zona-leste-de-sp-e-a-regiao-que-mais-registrou-roubos-na-cidade-no-1-semestre-de-2024-diz-levantamento.ghtml"
+                target="_blank" class="vermais">Ver mais...</a>
+            </div>
+          </div>
+          <div id="terceiraPostagem">
+            <img src="../../assets/3post.png" alt="">
+            <div>
+              <div>15 das 50 cidades brasileiras com maior taxa de furtos e roubos de celulares ficam em SP</div><br>
+              <div id="texto_terceiraPostagem">A cada 1 minuto e 42 segundos, um celular foi furtado ou roubado no
+                estado de São Paulo em 2023. É o que apontam os dados apresentados pelo 18º Anuário do Fórum Brasileiro
+                de Segurança Pública, divulgado nesta quinta-feira (18).</div>
+              <a href="https://g1.globo.com/sp/sao-paulo/noticia/2024/07/18/15-das-50-cidades-brasileiras-com-maior-taxa-de-furtos-e-roubos-de-celulares-ficam-em-sp-aponta-anuario-veja-quais.ghtml"
+                target="_blank " class="vermais">Ver mais...</a>
+            </div>
+          </div>
+          <div id="quartaPostagem">
+            <img src="../../assets/post.png" alt="">
+            <div>
+              <div>Onze pessoas morrem em ataques na madrugada na Grande São Paulo</div><br>
+              <div id="texto_quartaPostagem">
+                Onze pessoas morreram em ataques criminosos na Grande São Paulo entre a noite desta quinta (8) e na
+                madrugada desta sexta-feira (9). As mortes aconteceram na Zona Sul da capital, em Santana de Parnaíba e
+                em Santo André, no ABC.</div>
+              <a href="https://g1.globo.com/sao-paulo/noticia/2012/11/onze-pessoas-morrem-em-ataques-na-madrugada-na-grande-sao-paulo.html"
+                target="_blank " class="vermais">Ver mais...</a>
+            </div>
+          </div>
+          <div>
 
 </body>
 
