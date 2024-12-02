@@ -84,7 +84,11 @@ function getMesAtual(ano) {
 
 function getCasosEstimados(ano, mes, localidade) {
     var instrucaoSql = `
-    WITH CrimeData AS (
+        SELECT
+        especificacao,
+        mes,
+        SUM(qtdCrimes) AS qtdCrimes
+    FROM (
         SELECT 
             CASE 
                 WHEN especificacao IN ('ROUBO - OUTROS', 'ROUBO DE VEÍCULO', 'ROUBO A BANCO', 'ROUBO DE CARGA', 'TOTAL DE ROUBO - OUTROS') THEN 'Roubo'
@@ -105,31 +109,10 @@ function getCasosEstimados(ano, mes, localidade) {
             AND localidade = '${localidade}'
         GROUP BY 
             especificacao, mes, ano, localidade
-    ),
-    TargetMonths AS (
-        SELECT 
-            ${mes} AS mes_atual,
-            CASE 
-                WHEN ${mes} = 12 THEN 1
-                ELSE ${mes} + 1
-            END AS proximo_mes
-    ),
-    HistoricalData AS (
-        SELECT 
-            cd.especificacao, 
-            cd.mes, 
-            cd.ano, 
-            cd.qtdCrimes
-        FROM CrimeData cd
-        JOIN TargetMonths tm
-            ON (cd.mes = tm.mes_atual OR cd.mes = tm.proximo_mes)
-            AND cd.ano = ${ano} - 1
-    )
-    SELECT 
-        especificacao, 
-        mes, 
-        SUM(qtdCrimes) AS qtdCrimes
-    FROM HistoricalData
+    ) AS CrimeData
+    WHERE 
+        (mes = ${mes} OR mes = ${mes + 1}) 
+        AND ano = ${ano - 1}
     GROUP BY especificacao, mes
     ORDER BY especificacao, mes;
 `;
