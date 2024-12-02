@@ -53,6 +53,10 @@ function irParaNoticias() {
     window.location.href = './noticias.html'
 }
 
+function irParaAlertas() {
+    window.location.href = './alertas.html'
+}
+
 function irParaPerfil() {
     const tipo_usuario = sessionStorage.getItem("TIPO_USUARIO");
 
