@@ -311,5 +311,5 @@ body {
 }
 
 .form-group input[readonly] {
-    cursor: not-allowed; 
+    cursor: pointer; 
 }

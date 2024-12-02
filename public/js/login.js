@@ -78,9 +78,12 @@ function entrar() {
             console.log("Usuário autenticado com sucesso:", data);
 
             sessionStorage.ID_USUARIO = data.id_usuario;
+            sessionStorage.CIM = data.cim;
             sessionStorage.NOME = data.nome;
-            sessionStorage.EMAIL = data.email;
             sessionStorage.TIPO_USUARIO = data.tipo_usuario
+            sessionStorage.CPF = data.cpf
+            sessionStorage.EMAIL = data.email;
+            sessionStorage.TELEFONE = data.telefone;
 
             const mensagemModal = document.getElementById("modal-message");
                 mensagemModal.textContent = "Login realizado com sucesso!";
@@ -137,9 +140,12 @@ function autenticarToken() {
             console.log("Usuário autenticado com sucesso:", data);
 
             sessionStorage.ID_USUARIO = data.id_usuario;
+            sessionStorage.CIM = data.cim;
             sessionStorage.NOME = data.nome;
-            sessionStorage.EMAIL = data.email;
             sessionStorage.TIPO_USUARIO = data.tipo_usuario
+            sessionStorage.EMAIL = data.email;
+            sessionStorage.TELEFONE = data.telefone;
+            
 
         })
         .catch(error => {
