@@ -64,16 +64,17 @@ function getComparacaoMes(anoSelecionado, localidade) {
                 dadosProjecao.latrocinioMesAtual = latrocinioMesAtual
 
                 function calcularPorcentagem(mesAnterior, mesAtual) {
-                    let diferenca = mesAnterior - mesAtual
+                    let diferenca = mesAtual - mesAnterior;
 
                     if (diferenca < 0) {
                         diferenca = diferenca * -1
-                    }
-
-                    porcentagem = ((diferenca / mesAnterior) * 100).toFixed(2)
-
-                    return porcentagem
+                    } 
+                
+                    let porcentagem = ((diferenca / mesAnterior) * 100).toFixed(2);
+                
+                    return `${porcentagem}%`;
                 }
+                
 
                 function mudarCor(mesAnterior, mesAtual) {
                     let diferenca = mesAnterior - mesAtual
@@ -95,19 +96,19 @@ function getComparacaoMes(anoSelecionado, localidade) {
                     return '<i class="bx bx-chevrons-down"></i>'
                 }
             
-                porcentagem_latrocinio.textContent = `${calcularPorcentagem(latrocinioMesAnterior, latrocinioMesAtual)}%`
+                porcentagem_latrocinio.textContent = `${calcularPorcentagem(latrocinioMesAnterior, latrocinioMesAtual)}`
                 porcentagem_latrocinio.style.color = mudarCor(latrocinioMesAnterior, latrocinioMesAtual)
                 cor_latrocinio.style.color = mudarCor(latrocinioMesAnterior, latrocinioMesAtual)
                 icone_latrocinio.style.color = mudarCor(latrocinioMesAnterior, latrocinioMesAtual)
                 icone_latrocinio.innerHTML = mudarIcone(latrocinioMesAnterior, latrocinioMesAtual)
 
-                porcentagem_roubo.textContent = `${calcularPorcentagem(rouboMesAnterior, rouboMesAtual)}%`
+                porcentagem_roubo.textContent = `${calcularPorcentagem(rouboMesAnterior, rouboMesAtual)}`
                 porcentagem_roubo.style.color = mudarCor(rouboMesAnterior, rouboMesAtual)
                 cor_roubo.style.color = mudarCor(rouboMesAnterior, rouboMesAtual)
                 icone_roubo.style.color = mudarCor(rouboMesAnterior, rouboMesAtual)
                 icone_roubo.innerHTML = mudarIcone(rouboMesAnterior, rouboMesAtual)
 
-                porcentagem_furto.textContent = `${calcularPorcentagem(furtoMesAnterior, furtoMesAtual)}%`
+                porcentagem_furto.textContent = `${calcularPorcentagem(furtoMesAnterior, furtoMesAtual)}`
                 porcentagem_furto.style.color = mudarCor(furtoMesAnterior, furtoMesAtual)
                 cor_furto.style.color = mudarCor(furtoMesAnterior, furtoMesAtual)
                 icone_furto.style.color = mudarCor(furtoMesAnterior, furtoMesAtual)
