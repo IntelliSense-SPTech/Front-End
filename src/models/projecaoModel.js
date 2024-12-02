@@ -73,7 +73,74 @@ function getComparacaoMes(ano, localidade) {
     return database.executar(instrucaoSql);
 }
 
+function getMesAtual(ano) {
+    var instrucaoSql = `
+    SELECT MAX(mes) AS mes_atual FROM crimes
+    WHERE ano = (SELECT MAX(${ano}) FROM crimes);
+`;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function getCasosEstimados(ano, mes, localidade) {
+    var instrucaoSql = `
+    WITH CrimeData AS (
+        SELECT 
+            CASE 
+                WHEN especificacao IN ('ROUBO - OUTROS', 'ROUBO DE VEÍCULO', 'ROUBO A BANCO', 'ROUBO DE CARGA', 'TOTAL DE ROUBO - OUTROS') THEN 'Roubo'
+                WHEN especificacao IN ('FURTO - OUTROS', 'FURTO DE VEÍCULO') THEN 'Furto'
+                WHEN especificacao = 'LATROCÍNIO' THEN 'Latrocínio'
+            END AS especificacao, 
+            mes, 
+            ano, 
+            localidade, 
+            SUM(qtd_casos) AS qtdCrimes
+        FROM crimes
+        WHERE 
+            especificacao IN (
+                'ROUBO - OUTROS', 'ROUBO DE VEÍCULO', 'ROUBO A BANCO', 'ROUBO DE CARGA', 'TOTAL DE ROUBO - OUTROS',
+                'FURTO - OUTROS', 'FURTO DE VEÍCULO', 
+                'LATROCÍNIO'
+            )
+            AND localidade = '${localidade}'
+        GROUP BY 
+            especificacao, mes, ano, localidade
+    ),
+    TargetMonths AS (
+        SELECT 
+            ${mes} AS mes_atual,
+            CASE 
+                WHEN ${mes} = 12 THEN 1
+                ELSE ${mes} + 1
+            END AS proximo_mes
+    ),
+    HistoricalData AS (
+        SELECT 
+            cd.especificacao, 
+            cd.mes, 
+            cd.ano, 
+            cd.qtdCrimes
+        FROM CrimeData cd
+        JOIN TargetMonths tm
+            ON (cd.mes = tm.mes_atual OR cd.mes = tm.proximo_mes)
+            AND cd.ano = ${ano} - 1
+    )
+    SELECT 
+        especificacao, 
+        mes, 
+        SUM(qtdCrimes) AS qtdCrimes
+    FROM HistoricalData
+    GROUP BY especificacao, mes
+    ORDER BY especificacao, mes;
+`;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 
 module.exports = {
-    getComparacaoMes
+    getComparacaoMes,
+    getMesAtual,
+    getCasosEstimados
 };
