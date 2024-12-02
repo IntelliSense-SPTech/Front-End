@@ -31,7 +31,6 @@ function cadastrarCorporativo(nome, telefone, email, senha, CPF, CIM, token) {
 }
 
 function mandarMensagem(nomeCompleto, email, telefone, mensagem) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function mandarMensagem():", nomeCompleto, email, telefone, mensagem);
     var instrucaoSql = `
         INSERT INTO Mensagem (nome, email, telefone, mensagem) VALUES ('${nomeCompleto}', '${email}', '${telefone}', '${mensagem}');
     `;
@@ -39,11 +38,39 @@ function mandarMensagem(nomeCompleto, email, telefone, mensagem) {
     return database.executar(instrucaoSql);
 }
 
+function editarNome(novoNome, idUsuario) {
+    var instrucaoSql = `
+    update usuarios set nome = '${novoNome}' where id_usuario = ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function editarEmail(novoEmail, idUsuario) {
+    var instrucaoSql = `
+    update usuarios set email = '${novoEmail}' where id_usuario = ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function editarTelefone(novoTelefone, idUsuario) {
+    var instrucaoSql = `
+    update usuarios set telefone = '${novoTelefone}' where id_usuario = ${idUsuario};
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 
 module.exports = {
     autenticar,
     cadastrar,
     cadastrarCorporativo,
     autenticarToken,
-    mandarMensagem
+    mandarMensagem,
+    editarNome,
+    editarEmail,
+    editarTelefone
 };

@@ -23,4 +23,17 @@ router.post("/mandarMensagem", function (req, res) {
     usuarioController.mandarMensagem(req, res);
 });
 
+router.put("/editarNome", function (req, res) {
+    usuarioController.editarNome(req, res);
+});
+
+router.put("/editarEmail", function (req, res) {
+    usuarioController.editarEmail(req, res);
+});
+
+router.put("/editarTelefone", function (req, res) {
+    usuarioController.editarTelefone(req, res);
+});
+
+
 module.exports = router;

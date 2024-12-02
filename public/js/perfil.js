@@ -23,5 +23,91 @@ function carregarPerfil() {
 }
 
 function editarPerfil() {
+    const ID_USUARIO = sessionStorage.getItem('ID_USUARIO');
+    let novoNome = novo_nome.value
+    let novoEmail = novo_email.value
+    let novoTelefone = novo_telefone.value
 
+    if (novoNome != '') {
+        editarNome(novoNome, ID_USUARIO)
+        novo_nome.value = ''
+    } 
+    if (novoEmail != '') {
+        editarEmail(novoEmail, ID_USUARIO)
+        novo_email.value = ''
+    } 
+    if (novoTelefone != '') {
+        editarTelefone(novoTelefone, ID_USUARIO)
+        novo_telefone.value = ''
+    } 
+
+    if (novoNome == '' || novoEmail == '' || novoTelefone == '') {
+        alert('Preencha os campos que deseja alterar')
+    }
+}
+
+function editarNome(novoNome, ID_USUARIO) {
+    
+        fetch("/usuarios/editarNome", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                novoNomeServer: novoNome,
+                idUsuarioServer: ID_USUARIO
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                sessionStorage.setItem('NOME', novoNome);
+                carregarPerfil()
+            }
+        })
+    
+}
+
+function editarEmail(novoEmail, ID_USUARIO) {
+    
+        fetch("/usuarios/editarEmail", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                novoEmailServer: novoEmail,
+                idUsuarioServer: ID_USUARIO
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+
+                if (resposta.ok) {
+                    sessionStorage.setItem('EMAIL', novoEmail);
+                    carregarPerfil()
+                }
+            }
+        })
+    
+}
+
+function editarTelefone(novoTelefone, ID_USUARIO) {
+    
+        fetch("/usuarios/editarTelefone", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                novoTelefoneServer: novoTelefone,
+                idUsuarioServer: ID_USUARIO
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+
+                if (resposta.ok) {
+                    sessionStorage.setItem('TELEFONE', novoTelefone);
+                    carregarPerfil()
+                }
+            }
+        })
+    
 }

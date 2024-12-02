@@ -163,10 +163,85 @@ function mandarMensagem(req, res) {
     }
 }
 
+function editarNome(req, res) {
+    let novoNome = req.body.novoNomeServer;
+    let idUsuario = req.body.idUsuarioServer;
+   
+    if (novoNome == undefined) {
+        res.status(400).send("Seu nome  está undefined!");
+    } else if (idUsuario == undefined) {
+        res.status(400).send("Seu idUsuario  está undefined!");
+    } else {
+        usuarioModel.editarNome(novoNome, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao enviar a mensagem! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function editarEmail(req, res) {
+    let novoEmail = req.body.novoEmailServer;
+    let idUsuario = req.body.idUsuarioServer;
+   
+    if (novoEmail == undefined) {
+        res.status(400).send("Seu Email está undefined!");
+    } else if (idUsuario == undefined) {
+        res.status(400).send("Seu idUsuario  está undefined!");
+    } else {
+        usuarioModel.editarEmail(novoEmail, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao enviar a mensagem! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function editarTelefone(req, res) {
+    let novoTelefone = req.body.novoTelefoneServer;
+    let idUsuario = req.body.idUsuarioServer;
+   
+    if (novoTelefone == undefined) {
+        res.status(400).send("Seu Telefone  está undefined!");
+    } else if (idUsuario == undefined) {
+        res.status(400).send("Seu idUsuario  está undefined!");
+    } else {
+        usuarioModel.editarTelefone(novoTelefone, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado)
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao enviar a mensagem! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     cadastrarCorporativo,
     autenticarToken,
-    mandarMensagem
+    mandarMensagem,
+    editarNome,
+    editarEmail,
+    editarTelefone
 }
