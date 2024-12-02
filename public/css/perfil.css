@@ -174,133 +174,142 @@ body {
 }
 
 
-.container {
-    display: flex;
-    padding: 20px;
-    border-radius: 10px;
-    margin-left: 150px;
+.container2 {
+    margin-top: 7.5vh;
+    margin-left: 33vw;
+    background-color: #fff;
+    width: 45.26vw;
+    height: 85.26vh;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.profile-section {
-    width: 35%;
-    padding: 20px;
-    background-color: #FFF;
-    margin-left: 20px;
-    border-radius: 20px;
+.container2 h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #1d2b45;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 2px solid #2e3d57;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+
+.input-wrapper label {
+    display: flex ;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2e3d57;
+    margin-right: 10px;
+    white-space: nowrap;
+    /* border-right: 2px solid #2e3d57; */
+    position: relative; 
+
     
 }
 
-.edit-section {
-    width: 50%;
-    padding: 20px;
-    background-color: #FFF;
-    margin-left: 80px;
-    border-radius: 20px;
-}
 
-.profile-section {
-    text-align: center;
-    border-right: 1px solid #ddd;
-}
-
-.profile-section h2 {
-    font-size: 1.5em;
-    color: #1E3A5F;
-    margin-bottom: 10px;
-}
-
-.profile-photo img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 60px;
-    margin-top: 20px;
-}
-
-.upload-button {
-    background-color: #1E3A5F;
-    color: #fff;
+.input-wrapper input {
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-bottom: 15px;
-}
-.upload-button:hover{
-    background-color: #114aa0;
-    cursor: pointer;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+    color: #2e3d57;
 }
 
-.upload-info {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 20px;
-    background-color: #EDEDED;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 10px;
+.input-wrapper input::placeholder {
+    color: #aaa;
 }
 
-.member-since {
-    font-size: 0.9em;
-    color: #666;
+.input-wrapper input::-webkit-outer-spin-button,
+.input-wrapper input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+.edit-section {
+    margin-top: 20px;
 }
 
 .edit-section h2 {
-    font-size: 1.5em;
-    color: #1E3A5F;
-    margin-bottom: 10px;
-}
-
-.edit-section p {
-    color: #666;
-    font-size: 1em;
+    font-size: 16px;
+    font-weight: bold;
     margin-bottom: 20px;
+    color: #1d2b45;
 }
 
-form {
+.button-container {
     display: flex;
-    flex-direction: column;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-}
-
-label {
-    font-size: 0.9em;
-    color: #666;
-}
-
-input, select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    color: #666;
-    background-color: #f9f9f9;
-}
-
-input[type="email"], input[type="password"], select {
-    width: 100%;
-}
-
-.save-button {
-    align-self: flex-start;
-    background-color: #1E3A5F;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
+    justify-content: center;
     margin-top: 20px;
 }
-.save-button:hover{
-    background-color: #114aa0;
+
+.button-container button {
+    background-color: #2e3d57;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #1d2b45;
+}
+
+
+.form-group {
+    margin-bottom: 10px;
+    
+}
+
+.form-group label {
+    margin-bottom: 18px;
+    display: inline-block;
+    width: 100px;
+    border: 2px solid #1d2b45;
+    border-radius: 33px;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    color: #2e3d57;
+    font-weight: bold;
+
+
+}
+
+.form-group input {
+    padding: 5px;
+    border: 2px solid #1d2b45;
+    border-radius: 33px;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    width: 33.26vw;
+    font-size: 14px;
+    color: #2e3d57;
+    font-weight: bold;
+
+
+}
+
+.form-group input[readonly] {
+    cursor: not-allowed; 
 }
