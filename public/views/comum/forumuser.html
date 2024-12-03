@@ -64,14 +64,18 @@
     </aside>
     <div class="container-relatos">
       <div class="relatos">
-        <span id="titulo-relatos">Relatos</span>
-        <button onclick="listar()" class="enviar-btn">Recarregar</button>
-        <div id="div_relatos"></div>
+        <div class="header">
+          <span id="titulo-relatos">Relatos</span>
+          <button onclick="listar()" class="enviar-btn">Recarregar</button>
+        </div>
+        <div id="div_relatos" class="box_relatos"></div>
 
 
-        <button id="escreverRelatoBtn" class="enviar-btn">
-          Escrever relato
-        </button>
+        <div class="footer">
+          <button id="escreverRelatoBtn" class="enviar-btn">
+            Escrever relato
+          </button>
+        </div>
 
 
         <div id="meuModal" class="modal">
@@ -84,9 +88,10 @@
               <label class="label" for="input_descricao">Descreva seu relato</label>
               <div class="underline"></div>
             </div>
-            <button onclick="postar()" id="button_enviar_relato" class="enviar-btn">
-              Enviar relato
-            </button>
+              <button onclick="postar()" id="button_enviar_relato" class="enviar-btn">
+                Enviar relato
+              </button>
+          
           </div>
         </div>
       </div>
