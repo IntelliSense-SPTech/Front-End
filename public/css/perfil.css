@@ -291,8 +291,20 @@ body {
     font-size: 14px;
     color: #2e3d57;
     font-weight: bold;
+}
 
-
+.form-group-editavel label {
+    margin-bottom: 18px;
+    display: inline-block;
+    width: 100px;
+    border: 2px solid #1d2b45;
+    border-radius: 33px;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    color: #2e3d57;
+    font-weight: bold;
 }
 
 .form-group input {
@@ -306,8 +318,19 @@ body {
     font-size: 14px;
     color: #2e3d57;
     font-weight: bold;
+}
 
-
+.form-group-editavel input {
+    padding: 5px;
+    border: 2px solid #1d2b45;
+    border-radius: 33px;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    width: 33.26vw;
+    font-size: 14px;
+    color: #707070;
+    font-weight: bold;
 }
 
 .form-group input[readonly] {

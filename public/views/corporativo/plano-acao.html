@@ -18,6 +18,7 @@
     <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../../js/links.js"></script>
+    <script src="../../js/plano_acao.js"></script>
 
 </head>
 
@@ -85,20 +86,21 @@
         <div class="corpo-titulo">
             <div class="titulo-plano">
                 <h1>
-                    Plano de Ação para Mobilização Eficiente de Tropas
+                    Plano de Ação para mobilização eficiente de tropas para o próximo mês
                 </h1>
             </div>
             <div class="texto-plano">
                 <p class="p-texto">
-                    Após a análise da distribuição de tropas policiais na Região Central, identificamos uma necessidade urgente de reforço para otimizar a cobertura de segurança. Abaixo estão as recomendações com base nas ocorrências recentes e nos indicadores de risco desta área
+                    Após a análise da distribuição de tropas policiais, identificamos uma necessidade de reforço para otimizar a cobertura de segurança. Abaixo estão as <b>recomendações</b> com base nas ocorrências recentes e nos indicadores de risco. <br><br>
+                    <b>Observação:</b> Este plano de ação apresenta recomendações gerais baseadas nas informações disponíveis em projeção. É importante que o usuário analise cuidadosamente cada sugestão, considerando o contexto e as necessidades específicas, antes de tomar qualquer decisão ou implementar as ações propostas.
 
                 </p>
             </div>
             <div class="div-input-policiais">
-                <h1>
+                <h2>
                     Insira o tamanho da sua frota de policiais
-                </h1>
-                <input type="number" class="input-frota" placeholder="17.800">
+                </h2>
+                <input type="number" class="input-frota" id="input_frota" onkeyup="main()">
             </div>
             
         </div>
@@ -113,21 +115,22 @@
 
             <div class="div6">
                 <p>Grande SP (excluindo capital) </p>
-                <h1>54,7%</h1>
-                <p>9612 policiais</p>
+                <h1 id="porcentagem_grandesp" class="number"></h1>
+                <p id="policiais_grandesp" class="text"> </p>
             </div>
             <div class="div7">
                 <p>Capital </p>
-                <h1>27,7%</h1>
-                <p>4806 policiais</p>
+                <h1 id="porcentagem_capital" class="number"></h1>
+                <p id="policiais_capital" class="text"> </p>
             </div>
             <div class="div8">
                 <p>Litoral</p>
-                <h1>17,2%</h1>
-                <p>3026 policiais</p>
+                <h1 id="porcentagem_litoral" class="number"></h1>
+                <p id="policiais_litoral" class="text"> </p>
             </div>
+            
+            
         </div>
-
 
 </body>
 

@@ -1,99 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alertas</title>
-    <link rel="stylesheet" href="../../css/alertas.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="icon" href="../../assets/5.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/akar-icons-fonts"></script>
-    <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
-    <script src="../../js/links.js"></script>
-    <script src="../../js/alertas.js"></script>
-  
-  </head>
-  <body>
-    <div class="container">
-      <aside class="sidebar">
-        <header>
-          <img src="../../assets/5 5.png" alt="Logo" />
-        </header>
-        <ul>
-          <li>
-            <div class="nome-div">
-            <p class="nome-usuario-style">Olá, <p class="nome-usuario-style" id="nome-usuario">undefined</p></p>
-          </div>
-            <input type="radio" id="dashboard" name="sidebar" />
-            <label for="dashboard" onclick="irParaDashboard()">
-              <i class="fa-solid fa-chart-simple"></i>
-              <p>Dashboard</p>
-            </label>
-          </li>
-          <li>
-            <input type="radio" id="projecao" name="sidebar" />
-            <label for="projecao" onclick="irParaAlertas()">
-              <i class="fa-solid fa-bell"></i>
-              <p>Alertas</p>
-            </label>
-          </li>
-          <li>
-            <input type="radio" id="projecao" name="sidebar" />
-            <label for="projecao" onclick="irParaProjecao()">
-              <i class="fa-solid fa-chart-line"></i>
-              <p>Projeção</p>
-            </label>
-          </li>
-          <li>
-            <input type="radio" id="notificacoes" name="sidebar" />
-            <label for="notificacoes" onclick="irParaPlanoAcao()">
-              <i class="fa-solid fa-map-location-dot"></i>
-              <p>Plano de ação</p>
-            </label>
-          </li>
-          <li>
-            <input type="radio" id="forum" name="sidebar" />
-            <label for="forum" onclick="irParaForum()">
-              <i class="fa-solid fa-comments"></i>
-              <p onclick="irParaForum()">Fórum</p>
-            </label>
-          </li>
-          <li>
-            <input type="radio" id="perfil" name="sidebar" />
-            <label for="perfil" onclick="irParaPerfil()">
-              <i class="fa-solid fa-user"></i>
-              <p>Perfil</p>
-            </label>
-          </li>
-          <li>
-            <input type="radio" id="conta" name="sidebar" />
-            <label for="conta" onclick="irParaHome()">
-              <i class="fa-solid fa-right-from-bracket"></i>
-              <p>Sair</p>
-            </label>
-          </li>
-        </ul>
-      </aside>
-      <main class="main-content">
-        
-            oi
-      </main>
-    </div>
-  </body>
-</html>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alertas</title>
+  <link rel="stylesheet" href="../../css/alertas.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="icon" href="../../assets/5.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/akar-icons-fonts"></script>
+  <script src="https://kit.fontawesome.com/65879fa723.js" crossorigin="anonymous"></script>
+  <script src="../../js/links.js"></script>
+  <script src="../../js/alertas.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <header>
+        <img src="../../assets/5 5.png" alt="Logo" />
+      </header>
+      <ul>
+        <li>
+          <div class="nome-div">
+            <p class="nome-usuario-style">Olá,
+            <p class="nome-usuario-style" id="nome-usuario">undefined</p>
+            </p>
+          </div>
+          <input type="radio" id="dashboard" name="sidebar" />
+          <label for="dashboard" onclick="irParaDashboard()">
+            <i class="fa-solid fa-chart-simple"></i>
+            <p>Dashboard</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="alertas" name="sidebar" />
+          <label for="alertas" onclick="irParaAlertas()">
+            <i class="fa-solid fa-bell"></i>
+            <p>Alertas</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="projecao" name="sidebar" />
+          <label for="projecao" onclick="irParaProjecao()">
+            <i class="fa-solid fa-chart-line"></i>
+            <p>Projeção</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="plano-acao" name="sidebar" />
+          <label for="plano-acao" onclick="irParaPlanoAcao()">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <p>Plano de ação</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="forum" name="sidebar" />
+          <label for="forum" onclick="irParaForum()">
+            <i class="fa-solid fa-comments"></i>
+            <p onclick="irParaForum()">Fórum</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="perfil" name="sidebar" />
+          <label for="perfil" onclick="irParaPerfil()">
+            <i class="fa-solid fa-user"></i>
+            <p>Perfil</p>
+          </label>
+        </li>
+        <li>
+          <input type="radio" id="sair" name="sidebar" />
+          <label for="sair" onclick="irParaHome()">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <p>Sair</p>
+          </label>
+        </li>
+      </ul>
+    </aside>
+    <div class="container">
+      <div class="corpo">
+        <div class="box-alertas">
+          <div class="titulo">Alertas</div>
+          <div class="alertas">
+
+            <div class="notification success">
+              <i class="icon fa-solid fa-circle-check fa-3x"> </i>
+              <button class="close-btn" onclick="this.parentElement.style.display='none';"></button>
+              <div class="texts">
+                <h2>Redução da criminalidade</h2>
+                <p>A Capital reduziu em <span class="number">30%</span> dos casos de Roubo em relação ao último mês</p>
+              </div>
+              <i class="fa-solid fa-chevron-down fa-2x"></i>
+            </div>
+
+            <div class="notification error">
+              <i class="fa-solid fa-triangle-exclamation fa-3x"></i>
+              <button class="close-btn" onclick="this.parentElement.style.display='none';"></button>
+              <div class="texts">
+                <h2>Aumento da criminalidade</h2>
+                <p>A Capital aumentou em <span class="number">30%</span> dos casos de Roubo em relação ao último mês</p>
+              </div>
+              <i class="fa-solid fa-chevron-up fa-2x"></i>
+            </div>
+
+          </div>
+
+
+          <div>
+          </div>
+</body>
+
+</html>

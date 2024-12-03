@@ -140,7 +140,7 @@ function getMesMaisIncidencias(ano) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-function getMaiorAumento(ano) {
+function getMaiorAumento() {
     var instrucaoSql = `
     WITH dados_recentes AS (
         SELECT
@@ -186,7 +186,7 @@ function getMaiorAumento(ano) {
     return database.executar(instrucaoSql);
 }
 
-function getMaiorReducao(ano) {
+function getMaiorReducao() {
     var instrucaoSql = `
     WITH dados_recentes AS (
         SELECT

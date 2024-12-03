@@ -88,67 +88,64 @@
           </li>
         </ul>
       </aside>
-      <div class="relatos">
-        <h2>Relatos</h2>
-        <button onclick="listar()"  class="enviar-btn">Recarregar</button>
-        <div id="div_relatos"></div>
-
-        
-        <button id="escreverRelatoBtn" class="enviar-btn">
-          Escrever relato
-        </button>
-
-       
-        <div id="meuModal" class="modal">
-          <div class="modal-conteudo">
-            <span class="fechar">&times;</span>
-            <h2>Escreva seu relato</h2>
-            
-            <div class="input-container">
-              <input
-                type="text"
-                placeholder=" "
-                id="input_descricao"
-                class="input_relato"
-                required
-              />
-              <label class="label" for="input_descricao">Descreva seu relato</label>
-              <div class="underline"></div>
+      <div class="container-relatos">
+        <div class="relatos">
+          <span id="titulo-relatos">Relatos</span>
+          <button onclick="listar()" class="enviar-btn">Recarregar</button>
+          <div id="div_relatos"></div>
+  
+  
+          <button id="escreverRelatoBtn" class="enviar-btn">
+            Escrever relato
+          </button>
+  
+  
+          <div id="meuModal" class="modal">
+            <div class="modal-conteudo">
+              <span class="fechar">&times;</span>
+              <h2>Escreva seu relato</h2>
+  
+              <div class="input-container">
+                <input type="text" placeholder=" " id="input_descricao" class="input_relato" required />
+                <label class="label" for="input_descricao">Descreva seu relato</label>
+                <div class="underline"></div>
+              </div>
+              <button onclick="postar()" id="button_enviar_relato" class="enviar-btn">
+                Enviar relato
+              </button>
             </div>
-            <button onclick="postar()" id="button_enviar_relato" class="enviar-btn">
-              Enviar relato
-            </button>
           </div>
         </div>
       </div>
     </div>
   </body>
-</html>
-
-<script>
-  // Obtém o modal
-  var modal = document.getElementById("meuModal");
-
-  // Obtém o botão específico que abre o modal usando o ID
-  var btn = document.getElementById("escreverRelatoBtn");
-
-  // Obtém o elemento <span> que fecha o modal
-  var span = document.querySelector(".fechar");
-
-  // Quando o usuário clica no botão, o modal é exibido
-  btn.onclick = function () {
-    modal.style.display = "block";
-  };
-
-  // Quando o usuário clica em <span> (x), o modal é fechado
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
-
-  // Quando o usuário clica fora do modal, ele também é fechado
-  window.onclick = function (event) {
-    if (event.target == modal) {
+  
+  </html>
+  
+  <script>
+    // Obtém o modal
+    var modal = document.getElementById("meuModal");
+  
+    // Obtém o botão específico que abre o modal usando o ID
+    var btn = document.getElementById("escreverRelatoBtn");
+  
+    // Obtém o elemento <span> que fecha o modal
+    var span = document.querySelector(".fechar");
+  
+    // Quando o usuário clica no botão, o modal é exibido
+    btn.onclick = function () {
+      modal.style.display = "block";
+    };
+  
+    // Quando o usuário clica em <span> (x), o modal é fechado
+    span.onclick = function () {
       modal.style.display = "none";
-    }
-  };
-</script>
+    };
+  
+    // Quando o usuário clica fora do modal, ele também é fechado
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>

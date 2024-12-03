@@ -30,23 +30,22 @@ function editarPerfil() {
 
     if (novoNome != '') {
         editarNome(novoNome, ID_USUARIO)
-        novo_nome.value = ''
     } 
     if (novoEmail != '') {
         editarEmail(novoEmail, ID_USUARIO)
-        novo_email.value = ''
     } 
     if (novoTelefone != '') {
-        editarTelefone(novoTelefone, ID_USUARIO)
-        novo_telefone.value = ''
+        editarTelefone(novoTelefone, ID_USUARIO)  
     } 
-
-    if (novoNome == '' || novoEmail == '' || novoTelefone == '') {
-        alert('Preencha os campos que deseja alterar')
-    }
+    novo_nome.value = ''
+    novo_email.value = ''
+    novo_telefone.value = ''
 }
 
 function editarNome(novoNome, ID_USUARIO) {
+    if (novoNome == '') {
+        alert('Preencha os campos que deseja alterar')
+    } else {
     
         fetch("/usuarios/editarNome", {
             method: "PUT",
@@ -63,11 +62,14 @@ function editarNome(novoNome, ID_USUARIO) {
                 carregarPerfil()
             }
         })
+    }
     
 }
 
 function editarEmail(novoEmail, ID_USUARIO) {
-    
+    if (novoEmail == '') {
+        alert('Preencha os campos que deseja alterar')
+    } else {
         fetch("/usuarios/editarEmail", {
             method: "PUT",
             headers: {
@@ -86,11 +88,14 @@ function editarEmail(novoEmail, ID_USUARIO) {
                 }
             }
         })
+    }
     
 }
 
 function editarTelefone(novoTelefone, ID_USUARIO) {
-    
+    if (novoTelefone == '') {
+        alert('Preencha os campos que deseja alterar')
+    } else {
         fetch("/usuarios/editarTelefone", {
             method: "PUT",
             headers: {
@@ -109,5 +114,5 @@ function editarTelefone(novoTelefone, ID_USUARIO) {
                 }
             }
         })
-    
+    }
 }

@@ -177,8 +177,120 @@ body {
     min-width: 20px;
 }
 
-.content {
-    background-color: red;
+.container {
     width: 83vw;
     height: 100vh;
 }
+
+.notification {
+    padding: 15px;
+    /* margin: 10px 0; */
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content:space-around; 
+    position: relative;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+.notification h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.notification p {
+    font-size: 18px;
+}
+
+.notification.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 5px solid #28a745;
+    width: 70vw;
+    height: 17vh;
+}
+.notification.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 5px solid #dc3545;
+    width: 70vw;
+    height: 17vh;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.close-btn:before,
+.close-btn:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 1px;
+}
+.close-btn:before {
+    transform: rotate(45deg);
+}
+.close-btn:after {
+    transform: rotate(-45deg);
+    animation-duration: 3s;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin-left: 170px;
+}
+
+
+.box-alertas {
+    width: 80vw;
+    height: 90vh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 5vh;
+    gap: 7vh;
+    overflow: auto;
+    border-radius: 20px;
+}
+
+.corpo{
+    display: flex;
+    align-items: center;    
+    width: 95%;
+}
+
+.titulo{
+    font-size: 30px;
+    font-family: "Raleway", sans-serif;
+    font-style: italic;
+    margin: 5vh;
+    margin-bottom: 0vh;
+    color: #003366;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+.number {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 19px;
+}
+

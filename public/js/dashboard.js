@@ -221,21 +221,7 @@ function getUltimaAtualizacao() {
         }
     })
   }
-  function carregarNotificacoes(ano) {
-      fetch("/dashboard/notificacoes", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ anoServer: ano })
-      })
-      .then((response) => response.json())
-      .then((dados) => {
-          // Atualize a interface com os dados recebidos
-          exibirNotificacoes(dados);
-      })
-      .catch((erro) => console.error("Erro ao carregar notificações:", erro));
-  }
+
 
 
 

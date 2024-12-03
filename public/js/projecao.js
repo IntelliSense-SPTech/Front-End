@@ -8,6 +8,7 @@ const dadosProjecao = {
     furtoMesAtual: 0
 }
 
+
 function main() {
     const anoSelecionado = 2024
     const localidade = selecionar_regiao.value
@@ -21,7 +22,6 @@ function trocarRegiaoTitulo(localidade) {
     let titulo = document.getElementById('id_localidade')
     let tituloProjecao = document.getElementById('id_localidade_projetada')
 
-    
 
     if (localidade == 'Litoral') {
         titulo.textContent = `no ${localidade}`
@@ -177,14 +177,14 @@ function getCasosEstimados(anoSelecionado, mesAtual, localidade) {
                     let diferenca = mesAnterior - mesAtual
 
                     if (diferenca < 0) {
-                        return 'Aumentou'
+                        return 'Reduziu'
                     }
 
-                    return 'Reduziu'
+                    return 'Aumentou'
                 }
 
                 function calcularPorcentagem(mesAtual, mesEstimado) {
-                    let diferenca = mesAtual - mesEstimado
+                    let diferenca = mesEstimado - mesAtual
 
                     if (diferenca < 0) {
                         diferenca = diferenca * -1
@@ -198,15 +198,15 @@ function getCasosEstimados(anoSelecionado, mesAtual, localidade) {
                 function mudarCor(diferenca) {
 
                     if (diferenca == 'Aumentou') {
-                        return 'red'
+                        return '#2CD17D'
                     }
 
-                    return '#2CD17D'
+                    return 'red'
                 }
 
                 function mudarIcone(diferenca) {
 
-                    if (diferenca == 'Aumentou') {
+                    if (diferenca == 'Reduziu') {
                         return '<i class="bx bx-chevrons-up"></i>'
                     }
 
