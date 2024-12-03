@@ -15,6 +15,7 @@ function carregarPerfil() {
     const TELEFONE = sessionStorage.getItem('TELEFONE');
     const TIPO_USUARIO = sessionStorage.getItem('TIPO_USUARIO');
 
+    nome_usuario.textContent = NOME
     perfil_nome_usuario.textContent = `${NOME} - ${TIPO_USUARIO}`
     cim.value = CIM
     cpf.value = CPF

@@ -31,10 +31,8 @@
       <ul>
         <li>
           <div class="nome-div">
-            <p class="nome-usuario-style">Olá,
-            <p class="nome-usuario-style" id="nome-usuario">undefined</p>
-            </p>
-          </div>
+          <p class="nome-usuario-style">Olá, <p class="nome-usuario-style" id="nome-usuario">undefined</p></p>
+        </div>
           <input type="radio" id="dashboard" name="sidebar" />
           <label for="dashboard" onclick="irParaDashboard()">
             <i class="fa-solid fa-chart-simple"></i>
@@ -56,8 +54,8 @@
           </label>
         </li>
         <li>
-          <input type="radio" id="plano-acao" name="sidebar" />
-          <label for="plano-acao" onclick="irParaPlanoAcao()">
+          <input type="radio" id="plano_acao" name="sidebar" />
+          <label for="plano_acao" onclick="irParaPlanoAcao()">
             <i class="fa-solid fa-map-location-dot"></i>
             <p>Plano de ação</p>
           </label>
@@ -77,8 +75,8 @@
           </label>
         </li>
         <li>
-          <input type="radio" id="sair" name="sidebar" />
-          <label for="sair" onclick="irParaHome()">
+          <input type="radio" id="conta" name="sidebar" />
+          <label for="conta" onclick="irParaHome()">
             <i class="fa-solid fa-right-from-bracket"></i>
             <p>Sair</p>
           </label>
@@ -89,31 +87,9 @@
       <div class="corpo">
         <div class="box-alertas">
           <div class="titulo">Alertas</div>
-          <div class="alertas">
-
-            <div class="notification success">
-              <i class="icon fa-solid fa-circle-check fa-3x"> </i>
-              <button class="close-btn" onclick="this.parentElement.style.display='none';"></button>
-              <div class="texts">
-                <h2>Redução da criminalidade</h2>
-                <p>A Capital reduziu em <span class="number">30%</span> dos casos de Roubo em relação ao último mês</p>
-              </div>
-              <i class="fa-solid fa-chevron-down fa-2x"></i>
-            </div>
-
-            <div class="notification error">
-              <i class="fa-solid fa-triangle-exclamation fa-3x"></i>
-              <button class="close-btn" onclick="this.parentElement.style.display='none';"></button>
-              <div class="texts">
-                <h2>Aumento da criminalidade</h2>
-                <p>A Capital aumentou em <span class="number">30%</span> dos casos de Roubo em relação ao último mês</p>
-              </div>
-              <i class="fa-solid fa-chevron-up fa-2x"></i>
-            </div>
+          <div class="alertas" id="div_alertas">
 
           </div>
-
-
           <div>
           </div>
 </body>
